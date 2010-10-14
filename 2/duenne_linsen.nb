@@ -1,22 +1,3 @@
-(* Content-type: application/mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 7.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       145,          7]
-NotebookDataLength[      5580,        180]
-NotebookOptionsPosition[      4793,        148]
-NotebookOutlinePosition[      5230,        165]
-CellTagsIndexPosition[      5187,        162]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
@@ -110,10 +91,12 @@ Cell["Berechnung", "Subsection",
  CellChangeTimes->{{3.496038305082038*^9, 3.496038306578801*^9}, {
   3.496038760563932*^9, 3.4960387892017117`*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"b", " ", "=", " ", GridBox[{
-     {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0"}
+     {"1", "1", "1", "1", "1", "1", "1", "1", "1", "1"}
     },
     GridBoxDividers->{
      "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
@@ -152,21 +135,23 @@ Cell[BoxData[{
   3.496037458672948*^9}, {3.496037683200523*^9, 3.496037802624846*^9}, {
   3.496037884809916*^9, 3.496038137008514*^9}, {3.49603817892264*^9, 
   3.496038276312952*^9}, {3.496038841646147*^9, 3.496038883795326*^9}, {
-  3.496051674892713*^9, 3.496051704523539*^9}}],
+  3.496051674892713*^9, 3.496051704523539*^9}, {3.496062604273307*^9, 
+  3.496062610164596*^9}}],
 
 Cell[BoxData[
  TagBox[GridBox[{
-    {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
-    {"8", "5", "6", "5", "4", "3", "3", "2", "2", "1"},
-    {"0.8888888888888888`", "1.5555555555555556`", "2.`", 
-     "2.2222222222222223`", "2.2222222222222223`", "2.`", "2.1`", "1.6`", 
-     "1.6363636363636365`", "0.9090909090909091`"}
+    {"1", "1", "1", "1", "1", "1", "1", "1", "1", "1"},
+    {"8", "7", "6", "5", "4", "3", "3", "2", "2", "1"},
+    {"0.8888888888888888`", "0.875`", "0.8571428571428571`", 
+     "0.8333333333333334`", "0.8`", "0.75`", "0.75`", "0.6666666666666666`", 
+     "0.6666666666666666`", "0.5`"}
    },
    AutoDelete->False,
    GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-  "Grid"]], "Input",
- CellChangeTimes->{{3.49605141740272*^9, 3.496051420782922*^9}}]
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.496062564590122*^9, 3.496062611181897*^9}}]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -194,8 +179,8 @@ Cell[BoxData[
      RowBox[{"x", ",", "1", ",", 
       RowBox[{"Length", "[", 
        RowBox[{"b", "[", 
-        RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], "]"}]], \
-"Input",
+        RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], 
+  "]"}]], "Input",
  CellChangeTimes->{{3.496038438457889*^9, 3.4960384870482893`*^9}, {
   3.496038567878811*^9, 3.4960386032138147`*^9}, {3.4960386822486258`*^9, 
   3.4960386834764757`*^9}}],
@@ -284,54 +269,11 @@ Cell["Zerstreuungslinse", "Section",
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
-WindowSize->{790, 883},
-WindowMargins->{{0, Automatic}, {2, Automatic}},
+WindowSize->{977, 883},
+WindowMargins->{{145, Automatic}, {35, Automatic}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
 FrontEndVersion->"7.0 for Linux x86 (64-bit) (February 25, 2009)",
 StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
   CharacterEncoding -> "iso8859-1"]
 ]
-(* End of Notebook Content *)
 
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[CellGroupData[{
-Cell[567, 22, 107, 1, 75, "Title"],
-Cell[CellGroupData[{
-Cell[699, 27, 94, 1, 78, "Section"],
-Cell[CellGroupData[{
-Cell[818, 32, 149, 2, 39, "Subsection"],
-Cell[970, 36, 1604, 42, 136, "Input"],
-Cell[2577, 80, 581, 12, 122, "Input"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3195, 97, 95, 1, 39, "Subsection"],
-Cell[CellGroupData[{
-Cell[3315, 102, 744, 22, 41, "Input"],
-Cell[4062, 126, 679, 16, 250, "Output"]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[7148, 228, 101, 1, 78, "Section"],
-Cell[CellGroupData[{
-Cell[7274, 233, 95, 1, 39, "Subsection"],
-Cell[CellGroupData[{
-Cell[7394, 238, 1029, 26, 122, "Input"],
-Cell[8426, 266, 579, 13, 62, "Output"]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]],
-Cell[9044, 284, 104, 1, 78, "Section"]
-}, Open  ]]
-}
-]
-*)
-
-(* End of internal cache information *)
