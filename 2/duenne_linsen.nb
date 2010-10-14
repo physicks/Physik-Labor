@@ -1,0 +1,195 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      5643,        185]
+NotebookOptionsPosition[      4809,        151]
+NotebookOutlinePosition[      5249,        168]
+CellTagsIndexPosition[      5206,        165]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["D\[UDoubleDot]nne Linsen", "Title",
+ CellChangeTimes->{{3.496037040453931*^9, 3.496037061554023*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Laplace", "Section",
+ CellChangeTimes->{{3.4960370762860823`*^9, 3.496037077891233*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Berechnung", "Subsection",
+ CellChangeTimes->{{3.496038305082038*^9, 3.496038306578801*^9}, {
+  3.496038760563932*^9, 3.4960387892017117`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"b", " ", "=", " ", GridBox[{
+     {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}], "\[NoBreak]", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", " ", "=", " ", GridBox[{
+     {"8", "7", "6", "5", "4", "3", "3", "2", "2", "1"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}], "\[NoBreak]", ";"}], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{
+   RowBox[{"f", " ", "=", " ", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       FractionBox["1", "b"], "+", 
+       FractionBox["1", "g"]}]], "//", "N"}]}], ";"}],
+  Editable->False], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"Grid", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"b", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", 
+      RowBox[{"g", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", 
+      RowBox[{"f", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Frame", "->", "All"}]}], "]"}],
+  Editable->False]}], "Input",
+ CellChangeTimes->{{3.496037097878812*^9, 3.496037119491955*^9}, {
+  3.4960371578812027`*^9, 3.496037373954874*^9}, {3.4960374068161497`*^9, 
+  3.496037458672948*^9}, {3.496037683200523*^9, 3.496037802624846*^9}, {
+  3.496037884809916*^9, 3.496038137008514*^9}, {3.49603817892264*^9, 
+  3.496038276312952*^9}, {3.496038841646147*^9, 3.496038883795326*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+    {"8", "7", "6", "5", "4", "3", "3", "2", "2", "1"},
+    {"0.8888888888888888`", "1.5555555555555556`", "2.`", 
+     "2.2222222222222223`", "2.2222222222222223`", "2.`", "2.1`", "1.6`", 
+     "1.6363636363636365`", "0.9090909090909091`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.496038270619163*^9, 3.496038276782172*^9}, 
+   3.4960385090846443`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Graph", "Subsection",
+ CellChangeTimes->{{3.4960383145066957`*^9, 3.496038315531712*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "/", 
+       RowBox[{"b", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "x"}], "]"}], "]"}]}], ",", 
+      RowBox[{"1", "/", 
+       RowBox[{"g", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "x"}], "]"}], "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1", ",", 
+      RowBox[{"Length", "[", 
+       RowBox[{"b", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], "]"}]], \
+"Input",
+ CellChangeTimes->{{3.496038438457889*^9, 3.4960384870482893`*^9}, {
+  3.496038567878811*^9, 3.4960386032138147`*^9}, {3.4960386822486258`*^9, 
+  3.4960386834764757`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], 
+    LineBox[{{1., 0.125}, {0.5, 0.14285714285714285`}, {0.3333333333333333, 
+     0.16666666666666666`}, {0.25, 0.2}, {0.2, 0.25}, {0.16666666666666666`, 
+     0.3333333333333333}, {0.14285714285714285`, 0.3333333333333333}, {0.125, 
+     0.5}, {0.1111111111111111, 0.5}, {0.1, 1.}}]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0.2, 0.2},
+  PlotRange->{{0.1, 1.}, {0.125, 1.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.496038603704356*^9, {3.496038685250313*^9, 3.496038694942116*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{792, 750},
+WindowMargins->{{148, Automatic}, {Automatic, 27}},
+FrontEndVersion->"7.0 for Linux x86 (64-bit) (February 25, 2009)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "iso8859-1"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 107, 1, 75, "Title"],
+Cell[CellGroupData[{
+Cell[699, 27, 94, 1, 78, "Section"],
+Cell[CellGroupData[{
+Cell[818, 32, 149, 2, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[992, 38, 1556, 41, 136, "Input"],
+Cell[2551, 81, 611, 13, 79, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3211, 100, 95, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[3331, 105, 744, 22, 41, InheritFromParent],
+Cell[4078, 129, 679, 16, 250, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
