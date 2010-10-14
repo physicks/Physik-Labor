@@ -1,0 +1,716 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     21128,        708]
+NotebookOptionsPosition[     17978,        592]
+NotebookOutlinePosition[     18426,        609]
+CellTagsIndexPosition[     18383,        606]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Labor - Ex1 - Temperatur", "Title",
+ CellChangeTimes->{{3.4839757687381315`*^9, 3.483975788730275*^9}, {
+  3.4839763626661024`*^9, 3.4839763832332788`*^9}}],
+
+Cell["Messung", "Subtitle",
+ CellChangeTimes->{{3.48397979376235*^9, 3.4839798112893524`*^9}, {
+  3.4839798453192987`*^9, 3.483979849550541*^9}, {3.483979880973338*^9, 
+  3.483979887876733*^9}}],
+
+Cell["Temperatur und Volumen zu Raumtemperatur", "Subsubtitle",
+ CellChangeTimes->{{3.4839798566389465`*^9, 3.4839798775011396`*^9}, 
+   3.483980802619053*^9, {3.483981091369569*^9, 3.4839811059124002`*^9}, 
+   3.4840216714306917`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataT0", " ", "=", " ", "0", " "}]], "Input",
+ CellChangeTimes->{{3.483980060000578*^9, 3.4839801978684635`*^9}, {
+  3.483980330629057*^9, 3.4839803457559223`*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4839803463729577`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataT0Fehler", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.483980531850566*^9, 3.483980545936372*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4839805464003983`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataV0", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.4839803598337274`*^9, 3.483980363570941*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.483980366164089*^9, 3.4839805648334527`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataV0Fehler", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.483981035244359*^9, 3.4839810659951177`*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.483981066939172*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataR0", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.4840210698052807`*^9, 3.484021072960461*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840210738425117`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataR0Fehler", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.4840210752155905`*^9, 3.4840210837440777`*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.484021084744135*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Volumen (Gasthermometer), Spannung (Thermoelement), R - NTC, R - PTC\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.4839811740843*^9, 3.4839812214260073`*^9}, {
+   3.4839815493037615`*^9, 3.4839815858138494`*^9}, 3.484021669918605*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataTemAll", " ", "=", " ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      StyleBox["\"\<N\>\"",
+       FontSize->16,
+       FontColor->GrayLevel[0]], 
+      StyleBox["\"\<Temperatur\>\"",
+       FontSize->16,
+       FontColor->GrayLevel[0]], "\"\<Diff-Temp\>\"", 
+      StyleBox["\"\<Volumen\>\"",
+       FontSize->16,
+       FontColor->GrayLevel[0]], 
+      StyleBox["\"\<Spannung\>\"",
+       FontSize->16,
+       FontColor->GrayLevel[0]], 
+      StyleBox["\"\<R-NTC\>\"",
+       FontSize->16,
+       FontColor->GrayLevel[0]], 
+      StyleBox["\"\<R-PTC\>\"",
+       FontSize->16,
+       FontColor->GrayLevel[0]]},
+     {"1", "0", "0", "0", "0", "0", "0"},
+     {"2", "0", "0", "0", "0", "0", "0"},
+     {"3", "0", "0", "0", "0", "0", "0"},
+     {"4", "0", "0", "0", "0", "0", "0"},
+     {"5", "0", "0", "0", "0", "0", "0"},
+     {"6", "0", "0", "0", "0", "0", "0"},
+     {"7", "0", "0", "0", "0", "0", "0"},
+     {"8", "0", "0", "0", "0", "0", "0"},
+     {"9", "0", "0", "0", "0", "0", "0"},
+     {"10", "0", "0", "0", "0", "0", "0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.4839812269463234`*^9, 3.48398132078269*^9}, {
+   3.4839813633411245`*^9, 3.483981363725147*^9}, {3.4839815379631124`*^9, 
+   3.483981540874279*^9}, {3.4839817094449205`*^9, 3.483981749406206*^9}, {
+   3.4839817871323643`*^9, 3.4839818034432974`*^9}, {3.4840173366337557`*^9, 
+   3.484017365001378*^9}, 3.484017428177992*^9, {3.4840206540745025`*^9, 
+   3.4840206684633255`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"\<\"N\"\>", "\<\"Temperatur\"\>", "\<\"Diff-Temp\"\>", \
+"\<\"Volumen\"\>", "\<\"Spannung\"\>", "\<\"R-NTC\"\>", "\<\"R-PTC\"\>"},
+     {"1", "0", "0", "0", "0", "0", "0"},
+     {"2", "0", "0", "0", "0", "0", "0"},
+     {"3", "0", "0", "0", "0", "0", "0"},
+     {"4", "0", "0", "0", "0", "0", "0"},
+     {"5", "0", "0", "0", "0", "0", "0"},
+     {"6", "0", "0", "0", "0", "0", "0"},
+     {"7", "0", "0", "0", "0", "0", "0"},
+     {"8", "0", "0", "0", "0", "0", "0"},
+     {"9", "0", "0", "0", "0", "0", "0"},
+     {"10", "0", "0", "0", "0", "0", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.483981326481016*^9, 3.483981366701317*^9, 
+  3.483981808005558*^9, 3.4840174308131423`*^9, 3.4840214502350397`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataTemFehler", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.4839813434749885`*^9, 3.4839813837692933`*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.48398138494536*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataDiffTempFehler", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.484022467039198*^9, 3.484022479417906*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840224802689548`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataVolFehler", " ", "=", " ", "dataV0Fehler"}]], "Input",
+ CellChangeTimes->{{3.4839813859904203`*^9, 3.4839814007362633`*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.483981401840327*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataSpannungFehler", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.483981404237464*^9, 3.48398141867229*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.4839814193593287`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataWidFehler", " ", "=", " ", "0"}]], "Input",
+ CellChangeTimes->{{3.4840224940137405`*^9, 3.4840225049203644`*^9}}],
+
+Cell[BoxData[
+ FormBox["0", TraditionalForm]], "Output",
+ CellChangeTimes->{3.484022505400392*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataVolPlot", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"dataTemAll", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "2"}], "]"}], "]"}], ",", 
+      RowBox[{"dataTemAll", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "4"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", "11"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.484017709773098*^9, 3.484017781105178*^9}, {
+  3.4840178641249266`*^9, 3.484017874251506*^9}, {3.484017974654248*^9, 
+  3.4840180133644624`*^9}, {3.4840180572899747`*^9, 3.484018128974075*^9}, {
+  3.4840186343139787`*^9, 3.4840186349620156`*^9}, {3.4840206755117283`*^9, 
+  3.4840206756077337`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.484018132083253*^9, 3.4840186376481695`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"dataVolPlot", ",", 
+   RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Temperatur/\>\"", ",", "\"\<Volumen/\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.4840185441308203`*^9, 3.484018575732628*^9}, {
+  3.4840186277216015`*^9, 3.484018671031079*^9}, {3.484018703701947*^9, 
+  3.4840187574420214`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{{}, {}, 
+    {Hue[0.67, 0.6, 0.6], 
+     LineBox[{{0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0.,
+       0.}, {0., 0.}, {0., 0.}, {0., 0.}}]}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->True,
+   AxesLabel->{
+     FormBox["\"Temperatur/\"", TraditionalForm], 
+     FormBox["\"Volumen/\"", TraditionalForm]},
+   AxesOrigin->{0, 0},
+   PlotRange->{{-1., 1.}, {-1., 1.}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{
+     Scaled[0.02], 
+     Scaled[0.02]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840187587450953`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Absolute Temperatur", "Subsubtitle",
+ CellChangeTimes->{{3.4840188040596876`*^9, 3.484018813222212*^9}, 
+   3.4840216660063815`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F_AbsTemp", "[", "V_", "]"}], " ", ":=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"(", 
+      RowBox[{"dataT0", "*", "V"}], ")"}], "dataV0"], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       FractionBox["V", "dataV0"], "]"}], "*", "dataT0Fehler"}], "+", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       FractionBox["dataT0", "dataV0"], "]"}], "*", "dataVolFehler"}], "+", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       FractionBox[
+        RowBox[{"(", 
+         RowBox[{"dataT0", "*", "V"}], ")"}], 
+        SuperscriptBox["dataV0", "2"]], "]"}], "*", "dataV0Fehler"}]}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.484018827810046*^9, 3.484018887626467*^9}, {
+  3.484018930248905*^9, 3.484018984646016*^9}, {3.4840191221118793`*^9, 
+  3.4840193055413704`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"F_AbsTemp", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"dataTemAll", "[", 
+     RowBox[{"[", 
+      RowBox[{"i", ",", "2"}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", "11"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.4840193273936205`*^9, 3.484019418916855*^9}, {
+  3.4840194784742618`*^9, 3.484019491008979*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"F_AbsTemp", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0"}], "}"}], "]"}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.48401939190631*^9, 3.484019419624896*^9}, 
+   3.4840194934981213`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Spannung, Thermokraft des Thermoelements", "Subsubtitle",
+ CellChangeTimes->{{3.4840195780359564`*^9, 3.4840195982021103`*^9}, {
+   3.4840211056063285`*^9, 3.484021125324456*^9}, 3.484021664783312*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataSpannungPlot", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"dataTemAll", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "3"}], "]"}], "]"}], ",", 
+      RowBox[{"dataTemAll", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "5"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", "11"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4840196114268665`*^9, 3.484019624065589*^9}, {
+  3.4840206831511655`*^9, 3.4840206913906364`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840196332411137`*^9, 3.48402069442181*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"dataSpannungPlot", ",", 
+   RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Temperatur/\>\"", ",", "\"\<Spannung/\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.4840198820763464`*^9, 3.4840199054176817`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{{}, {}, 
+    {Hue[0.67, 0.6, 0.6], 
+     LineBox[{{0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0.,
+       0.}, {0., 0.}, {0., 0.}, {0., 0.}}]}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->True,
+   AxesLabel->{
+     FormBox["\"Temperatur/\"", TraditionalForm], 
+     FormBox["\"Spannung/\"", TraditionalForm]},
+   AxesOrigin->{0, 0},
+   PlotRange->{{-1., 1.}, {-1., 1.}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{
+     Scaled[0.02], 
+     Scaled[0.02]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.484020702830291*^9, 3.484020708104593*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SpannungFit", "=", " ", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"dataSpannungPlot", ",", "x", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4840199205115447`*^9, 3.48401994664804*^9}, {
+  3.484020711284775*^9, 3.4840207147649736`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"FittedModel", "[", 
+   PanelBox[
+    TagBox["0.`",
+     Short],
+    FrameMargins->5], "]"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.484020715637024*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["PTC Widerstand, \[Alpha]", "Subsubtitle",
+ CellChangeTimes->{{3.484021096702819*^9, 3.484021097733878*^9}, {
+   3.4840211315008097`*^9, 3.4840211825537295`*^9}, 3.484021675277912*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataPtcPlot", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"dataTemAll", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "2"}], "]"}], "]"}], ",", 
+      RowBox[{"dataTemAll", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "7"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "2", ",", "11"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.4840213408817854`*^9, 3.4840213740806847`*^9}, {
+  3.4840214402044663`*^9, 3.4840214622027245`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"},
+     {"0", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.4840214263026714`*^9, 3.484021463066774*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"dataPtcPlot", ",", 
+   RowBox[{"AxesLabel", " ", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Temperatur/\>\"", ",", "\"\<Widerstand PTC/\>\""}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.4840214812418137`*^9, 3.4840215159998016`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{{}, {}, 
+    {Hue[0.67, 0.6, 0.6], 
+     LineBox[{{0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0., 0.}, {0.,
+       0.}, {0., 0.}, {0., 0.}, {0., 0.}}]}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->True,
+   AxesLabel->{
+     FormBox["\"Temperatur/\"", TraditionalForm], 
+     FormBox["\"Widerstand PTC/\"", TraditionalForm]},
+   AxesOrigin->{0, 0},
+   PlotRange->{{-1., 1.}, {-1., 1.}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{
+     Scaled[0.02], 
+     Scaled[0.02]}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840215251183233`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PTCFit", "=", " ", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"dataPtcPlot", ",", "x", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.484021564597581*^9, 3.4840215768122797`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"FittedModel", "[", 
+   PanelBox[
+    TagBox["0.`",
+     Short],
+    FrameMargins->5], "]"}], TraditionalForm]], "Output",
+ CellChangeTimes->{3.4840215784363728`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{944, 1079},
+WindowMargins->{{1, Automatic}, {Automatic, 0}},
+FrontEndVersion->"7.0 for Microsoft Windows (64-bit) (November 10, 2008)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 162, 2, 73, "Title"],
+Cell[732, 26, 194, 3, 36, "Subtitle"],
+Cell[929, 31, 235, 3, 28, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[1189, 38, 188, 3, 41, "Input"],
+Cell[1380, 43, 100, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1517, 50, 136, 2, 41, "Input"],
+Cell[1656, 54, 100, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1793, 61, 132, 2, 41, "Input"],
+Cell[1928, 65, 122, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2087, 72, 138, 2, 41, "Input"],
+Cell[2228, 76, 98, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2363, 83, 132, 2, 41, "Input"],
+Cell[2498, 87, 100, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2635, 94, 140, 2, 41, "Input"],
+Cell[2778, 98, 98, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2913, 105, 241, 4, 28, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[3179, 113, 1633, 41, 207, "Input"],
+Cell[4815, 156, 1216, 28, 209, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6068, 189, 141, 2, 41, "Input"],
+Cell[6212, 193, 97, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6346, 200, 142, 2, 41, "Input"],
+Cell[6491, 204, 100, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6628, 211, 152, 2, 41, "Input"],
+Cell[6783, 215, 98, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6918, 222, 141, 2, 41, "Input"],
+Cell[7062, 226, 100, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7199, 233, 141, 2, 41, "Input"],
+Cell[7343, 237, 98, 2, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7478, 244, 756, 18, 41, "Input"],
+Cell[8237, 264, 756, 25, 192, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9030, 294, 403, 9, 41, "Input"],
+Cell[9436, 305, 617, 17, 230, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10102, 328, 138, 2, 28, "Subsubtitle"],
+Cell[10243, 332, 843, 24, 77, "Input"],
+Cell[CellGroupData[{
+Cell[11111, 360, 391, 10, 41, "Input"],
+Cell[11505, 372, 325, 8, 40, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11879, 386, 207, 2, 28, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[12111, 392, 560, 15, 41, "Input"],
+Cell[12674, 409, 755, 25, 192, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13466, 439, 309, 7, 41, "Input"],
+Cell[13778, 448, 640, 17, 230, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14455, 470, 272, 5, 41, "Input"],
+Cell[14730, 477, 198, 7, 60, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14977, 490, 189, 2, 28, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[15191, 496, 557, 15, 41, "Input"],
+Cell[15751, 513, 758, 25, 192, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16546, 543, 313, 7, 41, "Input"],
+Cell[16862, 552, 624, 17, 230, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17523, 574, 212, 4, 41, "Input"],
+Cell[17738, 580, 200, 7, 60, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

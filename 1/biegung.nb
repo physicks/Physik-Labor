@@ -1,0 +1,328 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      9777,        319]
+NotebookOptionsPosition[      8257,        263]
+NotebookOutlinePosition[      8595,        278]
+CellTagsIndexPosition[      8552,        275]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["1.", "Section",
+ CellChangeTimes->{{3.48327665971097*^9, 3.483276665402021*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.483276780584817*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Abmessungen Stab", "Subsection",
+ CellChangeTimes->{{3.483276306523695*^9, 3.483276319056315*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataStab", " ", "=", " ", GridBox[{
+    {"\"\<h\>\"", "\"\<b\>\"", "\"\<l\>\"", "\"\<d\>\""},
+    {"0", "0", "0", "0"},
+    {"0", "0", "0", "0"}
+   },
+   GridBoxDividers->{
+    "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+     "RowsIndexed" -> {}}]}]], "Input",
+ CellChangeTimes->{
+  3.483276320633155*^9, {3.483276452972247*^9, 3.4832764570430317`*^9}, 
+   3.483276510238907*^9, 3.4832765846345663`*^9, {3.48327704305455*^9, 
+   3.483277060088829*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dataStabFehler", "=", 
+   FractionBox["1", "50"]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.483276517778214*^9, 3.4832765710906477`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Messungen Gewichte", "Subsection",
+ CellChangeTimes->{{3.483276329397365*^9, 3.483276337122424*^9}, {
+  3.4832768009153957`*^9, 3.483276833751258*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataGewicht", " ", "=", " ", GridBox[{
+    {"\"\<F1\>\"", "\"\<F2\>\"", "\"\<F3\>\""},
+    {"0", "0", "0"},
+    {"0", "0", "0"}
+   },
+   GridBoxDividers->{
+    "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+     "RowsIndexed" -> {}}], " "}]], "Input",
+ CellChangeTimes->{{3.4832773361098537`*^9, 3.483277344976653*^9}, {
+  3.483277379625352*^9, 3.483277426252346*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataGewichtFehler", "=", " ", 
+  RowBox[{"1", " ", 
+   SuperscriptBox["10", 
+    RowBox[{"-", "3"}]]}]}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Messungen Auflage", "Subsection",
+ CellChangeTimes->{{3.483276870555407*^9, 3.4832769113966618`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"dataAuflage", " ", "=", " ", GridBox[{
+     {"\"\<l\>\""},
+     {"0"},
+     {"0"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}]}]], "Input",
+ CellChangeTimes->{{3.4832769142557087`*^9, 3.483276925835079*^9}, {
+  3.48327703273251*^9, 3.483277038953825*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataAuflageFehler", " ", "=", " ", "1"}]], "Input",
+ CellChangeTimes->{{3.483276927618629*^9, 3.483276943207727*^9}, 
+   3.483277541076994*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. ", "Section",
+ CellChangeTimes->{{3.4832770942580557`*^9, 3.4832770968500443`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Alustab", "Subsection",
+ CellChangeTimes->{{3.483277110942235*^9, 3.483277188591284*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataAlu", " ", "=", " ", GridBox[{
+    {"\"\<l_F1\>\"", "\"\<l_F2\>\"", "\"\<l_F3\>\""},
+    {"0", "0", "0"},
+    {"0", "0", "0"},
+    {"0", "0", "0"}
+   },
+   GridBoxDividers->{
+    "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+     "RowsIndexed" -> {}}]}]], "Input",
+ CellChangeTimes->{{3.483277229059647*^9, 3.483277240638488*^9}, {
+  3.48327730961274*^9, 3.4832773292698507`*^9}, {3.483277449771381*^9, 
+  3.48327752779053*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataAluFehler", " ", "=", " ", "0.1"}]], "Input",
+ CellChangeTimes->{{3.4832775313272743`*^9, 3.483277535145587*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"AluM", "=", 
+  RowBox[{"Mean", "[", 
+   RowBox[{"dataAlu", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", "4"}], ",", "All"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"AluS", "=", " ", 
+  RowBox[{"StandardDeviation", "[", 
+   RowBox[{"dataAlu", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", "4"}], ",", "All"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"AluF", " ", "=", " ", 
+  FractionBox["AluS", 
+   SqrtBox["3"]]}]}], "Input",
+ CellChangeTimes->{{3.4832775647431593`*^9, 3.483277635557539*^9}, {
+  3.483277708834155*^9, 3.483277773686418*^9}, {3.48327850256531*^9, 
+  3.483278516464695*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Messingtab", "Subsection",
+ CellChangeTimes->{{3.483277110942235*^9, 3.483277188591284*^9}, {
+  3.483277881193514*^9, 3.483277884390867*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataMes", " ", "=", " ", GridBox[{
+    {"\"\<l_F1\>\"", "\"\<l_F2\>\"", "\"\<l_F3\>\""},
+    {"0", "0", "0"},
+    {"0", "0", "0"},
+    {"0", "0", "0"}
+   },
+   GridBoxDividers->{
+    "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+     "RowsIndexed" -> {}}]}]], "Input",
+ CellChangeTimes->{{3.483277229059647*^9, 3.483277240638488*^9}, {
+  3.48327730961274*^9, 3.4832773292698507`*^9}, {3.483277449771381*^9, 
+  3.48327752779053*^9}, {3.483277886203906*^9, 3.483277889693089*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataMesFehler", " ", "=", " ", "0.1"}]], "Input",
+ CellChangeTimes->{{3.4832775313272743`*^9, 3.483277535145587*^9}, {
+  3.48327789178471*^9, 3.483277893134582*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"MesM", "=", 
+  RowBox[{"Mean", "[", 
+   RowBox[{"dataMes", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", "4"}], ",", "All"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"MesS", "=", " ", 
+  RowBox[{"StandardDeviation", "[", 
+   RowBox[{"dataMes", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", "4"}], ",", "All"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"MesF", " ", "=", " ", 
+  FractionBox["MesS", 
+   SqrtBox["3"]]}]}], "Input",
+ CellChangeTimes->{{3.4832775647431593`*^9, 3.483277635557539*^9}, {
+  3.483277708834155*^9, 3.483277773686418*^9}, {3.483277899117557*^9, 
+  3.483277945908781*^9}, {3.483278474737357*^9, 3.483278490166264*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Stahlstab", "Subsection",
+ CellChangeTimes->{{3.483277110942235*^9, 3.483277188591284*^9}, {
+  3.4832784562870092`*^9, 3.483278458025033*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataSta", " ", "=", " ", GridBox[{
+    {"\"\<l_F1\>\"", "\"\<l_F2\>\"", "\"\<l_F3\>\""},
+    {"0", "0", "0"},
+    {"0", "0", "0"},
+    {"0", "0", "0"}
+   },
+   GridBoxDividers->{
+    "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+     "RowsIndexed" -> {}}]}]], "Input",
+ CellChangeTimes->{{3.483277229059647*^9, 3.483277240638488*^9}, {
+  3.48327730961274*^9, 3.4832773292698507`*^9}, {3.483277449771381*^9, 
+  3.48327752779053*^9}, {3.483277964842502*^9, 3.483277968096629*^9}}],
+
+Cell[BoxData[
+ RowBox[{"dataStaFehler", " ", "=", " ", "0.1"}]], "Input",
+ CellChangeTimes->{{3.4832775313272743`*^9, 3.483277535145587*^9}, {
+  3.483277970321939*^9, 3.483277971585969*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"StaM", "=", 
+  RowBox[{"Mean", "[", 
+   RowBox[{"dataSta", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", "4"}], ",", "All"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"StaS", "=", " ", 
+  RowBox[{"StandardDeviation", "[", 
+   RowBox[{"dataSta", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", "4"}], ",", "All"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"StaF", " ", "=", " ", 
+  FractionBox["StaS", 
+   SqrtBox["3"]]}]}], "Input",
+ CellChangeTimes->{{3.4832775647431593`*^9, 3.483277635557539*^9}, {
+  3.483277708834155*^9, 3.483277773686418*^9}, {3.483277973495199*^9, 
+  3.483277993416999*^9}, {3.483278359985572*^9, 3.483278376904003*^9}, {
+  3.483278426028713*^9, 3.4832784380270023`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.", "Section",
+ CellChangeTimes->{{3.483278056720319*^9, 3.483278056936573*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.483278087829976*^9, 3.483278155200935*^9}, {
+  3.483278190410006*^9, 3.483278227149939*^9}}]
+}, Open  ]]
+},
+WindowSize->{640, 750},
+WindowMargins->{{171, Automatic}, {Automatic, 51}},
+FrontEndVersion->"7.0 for Linux x86 (64-bit) (February 25, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 86, 1, 73, "Section"],
+Cell[656, 25, 87, 1, 46, "Input"],
+Cell[CellGroupData[{
+Cell[768, 30, 104, 1, 39, "Subsection"],
+Cell[875, 33, 500, 12, 72, "Input"],
+Cell[1378, 47, 189, 4, 67, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1604, 56, 157, 2, 39, "Subsection"],
+Cell[1764, 60, 413, 10, 72, "Input"],
+Cell[2180, 72, 139, 4, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2356, 81, 107, 1, 39, "Subsection"],
+Cell[2466, 84, 401, 11, 93, "Input"],
+Cell[2870, 97, 167, 3, 28, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3086, 106, 92, 1, 73, "Section"],
+Cell[CellGroupData[{
+Cell[3203, 111, 95, 1, 39, "Subsection"],
+Cell[3301, 114, 478, 12, 90, "Input"],
+Cell[3782, 128, 141, 2, 28, "Input"],
+Cell[3926, 132, 692, 20, 88, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4655, 157, 147, 2, 39, "Subsection"],
+Cell[4805, 161, 524, 12, 90, "Input"],
+Cell[5332, 175, 189, 3, 28, "Input"],
+Cell[5524, 180, 739, 20, 87, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6300, 205, 148, 2, 39, "Subsection"],
+Cell[6451, 209, 524, 12, 90, "Input"],
+Cell[6978, 223, 190, 3, 28, "Input"],
+Cell[7171, 228, 790, 21, 87, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8010, 255, 87, 1, 73, "Section"],
+Cell[8100, 258, 141, 2, 28, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
