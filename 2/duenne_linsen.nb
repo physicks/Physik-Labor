@@ -264,8 +264,96 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell["Zerstreuungslinse", "Section",
- CellChangeTimes->{{3.4960594950207043`*^9, 3.496059499087419*^9}}]
+ CellChangeTimes->{{3.4960594950207043`*^9, 3.496059499087419*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Methode 1 : ohne/mit Zerstreuung", "Subsection",
+ CellChangeTimes->{{3.496063044507575*^9, 3.49606307051658*^9}}],
+
+Cell["\<\
+bo3 ist Abstand von der Sammellinse zum Bild ohne Zerstreuungslinse
+bm3 ist der Abstand von der Sammellinse zum Bild mit Zerstreuungslinse
+lsz3 ist der Abstand der Linsen
+gsz3 ist der Gegenstandsabstand f\[UDoubleDot]r die Zerstreuungslinse\
+\>", "Text",
+ CellChangeTimes->{{3.496063244719348*^9, 3.496063373384144*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"bo3", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2",
+      ",", "2", ",", "2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bm3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "3", ",", "3", ",", "3", ",", "3", ",", "3", ",", "3", ",", "3",
+      ",", "3", ",", "3"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lsz3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1",
+      ",", "1", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"gz3", " ", "=", " ", 
+  RowBox[{"bo3", "-", "lsz3"}]}], "\[IndentingNewLine]", 
+ RowBox[{"bz3", " ", "=", " ", 
+  RowBox[{"bm3", " ", "-", "lsz3"}]}], "\[IndentingNewLine]", 
+ RowBox[{"f3", " ", "=", " ", 
+  FractionBox["1", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"-", "gz3"}]], "+", 
+    FractionBox["1", "bz3"]}]]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.496063146578232*^9, 3.496063204557049*^9}, {
+  3.496063375645776*^9, 3.496063543071913*^9}, {3.4960637095298653`*^9, 
+  3.496063811007842*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+   ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.496063585885974*^9, {3.496063748355556*^9, 3.496063811804058*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", ",", "2", 
+   ",", "2", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.496063585885974*^9, {3.496063748355556*^9, 3.496063811822998*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}], ",", 
+   RowBox[{"-", "2"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.496063585885974*^9, {3.496063748355556*^9, 3.496063811840538*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Methode 2 : ?", "Subsection",
+ CellChangeTimes->{{3.496063072907011*^9, 3.49606307722707*^9}}]
+}, Open  ]]
 }, Open  ]]
 },
 WindowToolbars->"EditBar",
