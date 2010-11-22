@@ -1,0 +1,264 @@
+%        File: kristalloptik.tex
+%     Created: Mon Nov 22 03:00  2010 C
+% Last Change: Mon Nov 22 03:00  2010 C
+%
+\documentclass[a4paper]{article}
+\usepackage[]{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{ngerman}
+\begin{document}
+
+\section{Aufgabensetllung}
+\begin{itemize}
+\item
+  Es ist experimentell das Gesetz von Malus zu beweisen.
+\item
+  Es ist das Verhalten von $\frac{\lambda}{2}$-/ $\frac{\lambda}{4}$- Plättchen zu messen.
+\end{itemize}
+
+\section{Voraussetzungen}
+\subsection{Gesetz von Malus}
+Allgemein.
+\begin{align}
+  I = c * E^2 
+\end{align}
+Bei linearer Polarisierung mit dem Winkel $\theta$ gilt
+\begin{align}
+  I = c * E^2 * cos^2(\theta) 
+\end{align}
+Aus dem Verhältnis der maximalen Intensität und der Gemessenen bekommt man das Gesetz von Malus
+\begin{align}
+    \frac{I}{I_{max}}= \cos^2{\theta}
+\end{align}
+\subsection{$\frac{\lambda}{x}$-Plättchen}
+Aufgeteilt in x und y Richtung kann man E wie folt schreiben
+\begin{align}
+  E_x &= E cos(\psi) cos(\omega t - \phi)\\
+  E_y &= E sin(\psi) sin(\omega t - \phi - \frac{\lambda}{x})
+\end{align}
+wobei $\phi$ die Drehung beim durchlaufen des Plättchens beschreibt und $\frac{\lambda}{x}$ die relative Verschiebung der 2 Richtungen ist.$\psi$ ist der Winkel der Polarisierungsrichtung zur Optischen Hauptachse.
+Bei x = 2 wird das Licht um 2 $\psi$ gedreht und bei x = 4 entsteht zirkular polarisiertes Licht.
+
+\section{Versuchsaufbau}
+Nach der Reihe wurden folgende Objekte auf einer Schiene montiert.
+\begin{itemize}
+\item Laser
+\item Polarisator
+\item $\frac{\lambda}{2}$ oder $\frac{\lambda}{4}$ Plättchen
+\item Analysator
+\item Photodetektor mit Laser-Linenfilter
+\end{itemize}
+Je nach Versuch wurden die $\frac{\lambda}{2}$ und $\frac{\lambda}{4}$ Plättchen sowie der Analysator entfernt.
+Der Photodetektor wurde an ein Voltmeter angeschlossen um die Intensität zu messen.
+
+\section{Geräteliste}
+\begin{itemize}
+  \item 670nm Laser
+  \item Polariator in Drehhalterung, U=$\pm 2^\circ$
+  \item $\frac{\lambda}{2}$ und $\frac{\lambda}{4}$ Plättchen in Drehhalterung, U=$\pm 2^\circ$
+  \item Analysator in Drehhalterung, U=$\pm 2^\circ$
+  \item Photodetektor mit Laser-Linenfilter
+  \item Voltcraft Voltmeter VC220, U=$\pm(0.5\% + 2 dgts)$
+\end{itemize}
+
+\section{Messung}
+\subsection{Kalibierung}
+  \subsubsection{Messung der Spannung am Photodetektor mit ausgeschltetem Laser}
+  \begin{align}
+    U_D=-6.2mV
+  \end{align}
+  
+  \subsubsection{Messung der Spannung am Photodetektor bei eingeschaltetem Laser und Polarisator auf $0^\circ$(nur mit Polaristor zwischen Laser und Detektor)}
+  \begin{align}
+    U_D=7.94V
+  \end{align}
+\newpage
+  \subsection{Messung der Spannung am Photodetektor bei Veränderung des Analysatorwinkels(Polarisator auf $0^\circ$ und ohne $\lambda$-Plättchen)}
+
+  \begin{table}[ht]
+    \centering
+    \caption{Gesetz von Malus}
+    \begin{itemize}
+      \item N \dots Messnummer
+      \item U \dots Spannung am Photodetektor
+      \item $\phi_A$ \dots Anlaysatorwinkel
+    \end{itemize}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      N&U/V&$\phi_A/Grad$\\
+      \hline
+      1&5.56&0\\
+      \hline
+      2&5.55&5\\
+      \hline
+      3&5.33&10\\
+      \hline
+      4&5.09&15\\
+      \hline
+      5&4.72&20\\
+      \hline
+      6&4.33&25\\
+      \hline
+      7&3.86&30\\
+      \hline
+      8&3.41&35\\
+      \hline
+      9&2.91&40\\
+      \hline
+      10&2.42&45\\
+      \hline
+      11&1.910&50\\
+      \hline
+      12&1.480&55\\
+      \hline
+      13&1.047&60\\
+      \hline
+      14&0.0701&65\\
+      \hline
+      15&0.417&70\\
+      \hline
+      16&0.1983&75\\
+      \hline
+      17&0.0540&80\\
+      \hline
+      18&0.0000&85\\
+      \hline
+      19&0.0257&90\\
+      \hline
+      20&0.1312&95\\
+      \hline
+      21&5.66&-5\\
+      \hline
+    \end{tabular}
+    \label{tab:1}
+  \end{table}
+
+  \newpage
+  \subsection{$\frac{\lambda}{2}$-Plättchen}
+  \subsubsection{Messung des Intensitätsmaximums/minimums bei Analysator-/Polarisatorwinkel auf 0 Grad und der $\frac{\lambda}{2}$-Platte}
+Minimum:
+\begin{align}
+  \phi_{\frac{\lambda}{2}}&=46^\circ\\
+  U_D &= 12.3mV
+\end{align}
+Maximum:
+\begin{align}
+  \phi_{\frac{\lambda}{2}}&=90^\circ\\
+  U_D &= 5.45V
+\end{align}
+\subsubsection{Messung des Intensitätsmaximums/minimums bei festen $\phi_{\frac{\lambda}{2}}$}
+$\phi_{\frac{\lambda}{2}}= 30^\circ$
+\begin{align}
+  \phi_{A_{max}}&=60^\circ \quad U_{D_{max}}=5.48V  \\
+  \phi_{A_{min}}&=328^\circ \quad U_{D_{min}}=11.6mV  
+\end{align}
+$\phi_{\frac{\lambda}{2}}= 15^\circ$
+\begin{align}
+  \phi_{A_{max}}&=28^\circ \quad U_{D_{max}}=5.57V \\ 
+  \phi_{A_{min}}&=299^\circ \quad U_{D_{min}}=2.6mV  
+\end{align}
+$\phi_{\frac{\lambda}{2}}= 0^\circ$
+\begin{align}
+  \phi_{A_{max}}&=0^\circ \quad U_{D_{max}}=5.55V  \\
+  \phi_{A_{min}}&=267^\circ \quad U_{D_{min}}=0.05mV  
+\end{align}
+\newpage
+
+\subsection{Messung der Intensität beim einem $\frac{\lambda}{4}$-Plättchens bei unterschiedlichen Analysatorwinkeln}
+
+\begin{table}[ht]
+  \centering
+  \caption{Intensität des $\frac{\lambda}{4}$-Plättchens}
+  \begin{itemize}
+    \item $\phi_A$ \dots Analysatorwinkel
+    \item $U_{45}$ \dots Spannung am Detektor bei $45^\circ$ des $\frac{\lambda}{4}$-Plättchens
+    \item $U_{30}$ \dots Spannung am Detektor bei $30^\circ$ des $\frac{\lambda}{4}$-Plättchens
+    \item $U_{15}$ \dots Spannung am Detektor bei $15^\circ$ des $\frac{\lambda}{4}$-Plättchens
+    \item $U_{0}$ \dots Spannung am Detektor bei $0^\circ$ des $\frac{\lambda}{4}$-Plättchens
+  \end{itemize}
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $\phi_A$/Grad&$U_{45}$/V&$U_{30}$/V&$U_{15}$/V&$U_{0}$/V\\
+    \hline
+   0&2.48&2.85&4.21&5.22\\
+    \hline
+   10&2.33&3.13&4.53&5.11\\
+    \hline
+   20&2.21&3.33&4.60&4.71\\
+    \hline
+   30&2.13&3.44&4.43&4.04\\
+    \hline
+   40&2.11&3.45&4.04&3.32\\
+    \hline
+   50&2.14&3.36&3.51&2.29\\
+    \hline
+   60&2.24&3.18&2.86&1.45\\
+    \hline
+   70&2.40&2.95&2.18&0.74\\
+    \hline
+   80&2.55&2.67&1.56&0.26\\
+    \hline
+   90&2.71&2.38&1.07&0.05\\
+    \hline
+   100&2.87&2.12&0.76&0.15\\
+    \hline
+   110&2.99&1.90&0.67&0.54\\
+    \hline
+   120&3.06&1.80&0.82&1.17\\
+    \hline
+   130&3.10&1.78&1.18&2.00\\
+    \hline
+   140&3.07&1.85&1.71&2.89\\
+    \hline
+   150&2.97&2.03&2.35&3.76\\
+    \hline
+   160&2.82&2.27&3.02&4.47\\
+    \hline
+   170&2.65&2.63&3.64&4.96\\
+    \hline
+   180&2.47&2.81&4.12&5.14\\
+    \hline
+  \end{tabular}
+  \label{tab:2}
+\end{table}
+\newpage
+\section{Rechnung/Auswertung}
+\subsection{Gesetz von Malus}
+  Die Daten wurden in Mathematica geplottet und es ist zu erkennen dass man einen Offset des Analysatorwinkels von 4 Grad hat, da bei diesem Winkel die theoretischen mit den gemessenen Daten zusammenfallen
+
+  \begin{figure}[ht]
+    \begin{center}
+      \includegraphics[width=0.8\textwidth]{malus.eps}
+    \end{center}
+    \caption{Gesetz von Malus}
+    \label{fig:1}
+  \end{figure}
+
+  \subsection{$\frac{\lambda}{2}$-Plättchen}
+  Wenn man jeweils das Minimum und das Maximum über den Winkel des Plättchens aufträgt erkennt man dass diese jeweils 90 Grad auseinanderliegen und um 2 mal den Winkel des Plättchens gedreht wurden.
+
+  \begin{figure}[ht]
+    \begin{center}
+      \includegraphics[width=0.8\textwidth]{lambda2.eps}
+    \end{center}
+    \caption{$\frac{\lambda}{2}$-Plättchen}
+    \label{fig:2}
+  \end{figure}
+
+  \subsection{$\frac{\lambda}{4}$-Plättchen}
+  Da das Plättchen scheinbar nicht auf die Wellenlänge des Lasers angepasst ist erhalten wir kein zirkular polarisiertes Licht, sondern ein elliptisch polarisiertes Licht. Man kann die Spannung des Detektors über den Winkel des Analysators auftragen und erhält dann Folgende Grafik.
+
+  \begin{figure}[ht]
+    \begin{center}
+      \includegraphics{lambda4.eps}
+    \end{center}
+    \caption{$\frac{\lambda}{4}$-Plättchen}
+    \label{fig:3}
+  \end{figure}
+
+  \section{Zusammenfassung}
+
+  Alle Versuche außer jener mit dem $\frac{\lambda}{4}$-Plättchens zeigten dass die theoretischen Werte gut mit der Realität zusammenpassen. Bei dem $\frac{\lambda}{4}$-Plättchen kann man durch die Theorie zeigen dass die gemessenen Figuren entstehen wenn man als Phasendifferenz einen anderen Wert als $\frac{\lambda}{4}$ nimmt
+\end{document}
+

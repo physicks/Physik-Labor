@@ -1,0 +1,234 @@
+%        File: hoch-tiefpass.tex
+%     Created: Mon Nov 22 06:00  2010 C
+% Last Change: Mon Nov 22 06:00  2010 C
+%
+\documentclass[a4paper]{article}
+\usepackage[]{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[]{graphicx}
+\begin{document}
+
+\section{Aufgabenstellung}
+\begin{itemize}
+  \item Messen des Frequenz-/Phasengangs eines RC Hochpasses
+  \item Messen des Frequenz-/Phasengangs eines RC Tiefpasses
+  \item Errechnen der Kapazität durch Messen des Spannungsverlaufs eines RC glieds als Integrator
+  \item Errechnen der Kapazität durch Messen des Spannungsverlaufs eines RC glieds als Differentiator
+\end{itemize}
+
+\section{Voraussetzungen}
+  Der Wiederstand des RC Glieds kann Komplex als die Summe der Impedanzen dargestellt werden. Da die Impedanz des Kondensators frequenzabhängig ist hat man je nach Frequenz unterschiedliches Verhalten der Schaltung(frequenzabhängiger Spannungsteiler). 
+
+\section{Versuchsaufbau}
+Bei allen Versuchen verwenden wir ein RC Serienglied.
+CH1 des Oszilloskops wird jeweils uber das ganze RC Glied gemessen.
+CH2 wird jenem Element gemessen am den die Ausgangsspannung anliegt.
+\subsection{Hochpass / Differentiator}
+  Die Ausgangsspannung wird am Widerstand abgenommen. Die Masse des Oszilloskops befindet sich am Widerstand auf der Seite der Versorgung.
+\subsection{Tiefpass/Integrator}
+  Die Ausgangsspannung wird am Kondensator abgenommen. Die Masse des Oszilloskops befindet sich am Kondensators auf der Seit der Versorgung.
+
+\section{Geräteliste}
+\begin{itemize}
+  \item Oszilloskop Hameg
+  \item USB Oszilloskop DSO220
+  \item Funktionsgenerator Hameg
+  \item Widerstand 1800$\Omega$
+  \item Kapazität 0.1$\mu$F
+\end{itemize}
+
+\section{Messungen}
+Die Eingangsamplitude beträgt jeweils 4V.
+\subsection{Hochpass}
+Es werden bei unterschiedlichen Frequenzen der Phasenunterschied und die Amplutide der Ausgangsspannung gemessen.
+
+\begin{table}[ht]
+  \centering
+  \caption{Ausgangsamplutide und Phasenunterschied abhängig von der Frequenz}
+  \begin{itemize}
+    \item f \dots Frequenz
+    \item $\phi$ \dots Phasenunterschied
+    \item $U_A$ \dots Ausgangsamplitude
+  \end{itemize}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    f/Hz&$\phi$/ms&$U_A$/V\\
+    \hline
+    5.867&40&0.280\\
+    \hline
+    10.21&24&0.480\\
+    \hline
+    66.5&3.6&0.3\\
+    \hline
+    140.0&1.6&0.6\\
+    \hline
+    209.1&1&0.9\\
+    \hline
+    326.0&0.6&1.4\\
+    \hline
+    487.8&0.35&2\\
+    \hline
+    565.2&0.28&2.2\\
+    \hline
+    1107&0.1&3\\
+    \hline
+    1878&0.04&3.6\\
+    \hline
+    2751&0.02&3.7\\
+    \hline
+    3886&0.004&3.8\\
+    \hline
+    5030&0.06&4\\
+    \hline
+    11790&0.001&4\\
+    \hline
+    20160&0.0004&4\\
+    \hline
+  \end{tabular}
+  \label{tab:1}
+\end{table}
+\newpage
+\subsection{Tiefpass}
+\begin{table}[ht]
+  \centering
+  \caption{Ausgangsamplutide und Phasenunterschied abhängig von der Frequenz}
+  \begin{itemize}
+    \item f \dots Frequenz
+    \item $\phi$ \dots Phasenunterschied
+    \item $U_A$ \dots Ausgangsamplitude
+  \end{itemize}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    f/Hz&$\phi$/ms&$U_A$/V\\
+    \hline
+    15,00&0&4\\
+    \hline
+    57.27&0.2&4\\
+    \hline
+    105.9&0.2&4\\
+    \hline
+    266.8&0.2&3.8\\
+    \hline
+    402.5&0.2&3.6\\
+    \hline
+    565.2&0.16&3.3\\
+    \hline
+    1052&0.130&2.5\\
+    \hline
+    2144&0.090&2\\
+    \hline
+    3543&0.060&0.9\\
+    \hline
+    4760&0.048&0.7\\
+    \hline
+    5311&0.044&0.6\\
+    \hline
+    5790&0.040&0.56\\
+    \hline
+    10460&0.022&0.32\\
+    \hline
+    19610&0.012&0.16\\
+    \hline
+  \end{tabular}
+  \label{tab:2}
+\end{table}
+
+
+
+\newpage
+\subsection{Integrator}
+
+Aufnahme des Oszilloskopbildes mit dem USB Oszilloskops
+\begin{figure}[ht]
+\begin{center}
+  \includegraphics[width=0.8 \textwidth]{int.eps}
+\end{center}
+\caption{RC im Integratorbetrieb}
+\label{fig:5}
+\end{figure}
+
+\subsection{Differentiator}
+
+Aufnahme des Oszilloskopbildes mit dem USB Oszilloskops
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.8 \textwidth]{dif.eps}
+  \end{center}
+  \caption{RC Glied im Differentiatorbetrieb}
+  \label{fig:6}
+\end{figure}
+
+
+\newpage
+\section{Rechung/Auswertung}
+\subsection{Hochpass}
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.8 \textwidth]{uehoch.eps}
+  \end{center}
+  \caption{Übertragungsfunktion des Hochpasses}
+  \label{fig:1}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.8 \textwidth]{phhoch.eps}
+  \end{center}
+  \caption{Phasendiagramm des Hochpasses}
+  \label{fig:2}
+\end{figure}
+Aus den Abbildungen kann man die Grenzfrequenz ablesen. Diese liegt bei der Phase von $45^\circ$ oder bei einer Dämpfung von $\frac{1} {\sqrt{2}}$
+\begin{align}
+  \nu_g ~= 855 Hz
+\end{align}
+Mit der Grenzfrequenz kann man nun die Kapazität errechnen.
+\begin{align}
+  C=\frac{1}{2 \nu \pi R}=0.1034\mu F  
+\end{align}
+\newpage
+\subsection{Tiefpass}
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.8 \textwidth]{uetief.eps}
+  \end{center}
+  \caption{Übertragungsfunktion des Tiefpasses}
+  \label{fig:3}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.8 \textwidth]{phtief.eps}
+  \end{center}
+  \caption{Phasendiagramm des Tiefpasses}
+  \label{fig:4}
+\end{figure}
+Aus den Abbildungen kann man die Grenzfrequenz ablesen. Diese liegt bei der Phase von $45^\circ$ oder bei einer Dämpfung von $\frac{1} {\sqrt{2}}$
+\begin{align}
+  \nu_g ~= 855 Hz
+\end{align}
+Mit der Grenzfrequenz kann man nun die Kapazität errechnen.
+\begin{align}
+  C =\frac{1}{2 \nu \pi R}=0.1034\mu F  
+\end{align}
+
+\subsection{Integrator}
+Über die Formel .. lässt sich die Kapazität berechnen.
+\begin{align}
+  C = 0.5 \mu F
+\end{align}
+
+\subsection{Differentiator}
+Über die Formel .. lässt sich die Kapazität berechnen.
+\begin{align}
+  C = 0.2 \mu F
+\end{align}
+
+
+\section{Zusammenfassung}
+Über Übertragtfunktion und Phasengang lässt sich die Kapazität/Grenzfrequenz relativ schon errechnen. Beim Differentiator/Integratorbetrieb stimmt zwar die Größenordnung aber der Wert liegt daneben. Dies ist möglicherweise darauf zurückzuführen, dass die Oszidaten digital aufgenommen und diese Datein in einem mir unbekannten Format(dso) gespeichert wurden. Ich habe versucht die Daten möglicht richtig zu Plotten, diese können aber einen relativ großen Fehler haben.
+
+\end{document}
+
+
+
