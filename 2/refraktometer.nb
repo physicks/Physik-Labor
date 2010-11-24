@@ -1,0 +1,155 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      3993,        145]
+NotebookOptionsPosition[      3198,        112]
+NotebookOutlinePosition[      3537,        127]
+CellTagsIndexPosition[      3494,        124]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Bestimmung des Kantenwinkels \[Phi] am Messprisma\
+\>", "Section",
+ CellChangeTimes->{{3.499606870401128*^9, 3.4996068875923223`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r1", "=", " ", "10"}], ";", " ", 
+  RowBox[{"dr1", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r2", "=", " ", "13"}], ";", " ", 
+  RowBox[{"dr2", "=", "dr1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Phi]", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"180", " ", "-", " ", 
+     RowBox[{"Abs", "[", 
+      RowBox[{"r1", "-", "r2"}], "]"}]}], ",", 
+    RowBox[{"dr1", "+", "dr2"}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.499606896925229*^9, 3.499607087900114*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"177", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{{3.499607056578442*^9, 3.4996070897291527`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bestimmund der Brechzahl des Prismas", "Section",
+ CellChangeTimes->{{3.499607143552322*^9, 3.4996071675259733`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Gamma]", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ng", "=", 
+  SqrtBox[
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"Sin", " ", "[", "\[Gamma]", "]"}], " ", "+", " ", 
+       RowBox[{"Cos", " ", "[", "\[Phi]", "]"}]}], 
+      RowBox[{"Sin", "[", "\[Phi]", "]"}]], ")"}], "+", "1"}]]}]}], "Input",
+ CellChangeTimes->{{3.499607544808647*^9, 3.499607547205118*^9}, {
+  3.499608286233964*^9, 3.4996083530191803`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Bestimmung der Brechzahl der Fl\[UDoubleDot]ssigkeit\
+\>", "Section",
+ CellChangeTimes->{{3.49960755385977*^9, 3.499607562191477*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Gamma]f", "="}], ";"}]], "Input",
+ CellChangeTimes->{{3.499607654177782*^9, 3.499607662130145*^9}, {
+  3.499608385687049*^9, 3.4996083879816313`*^9}, {3.499608467119573*^9, 
+  3.499608469372011*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[Alpha]f", "=", 
+  RowBox[{"\[Phi]", "-", 
+   RowBox[{"ArcSin", "[", 
+    FractionBox[
+     RowBox[{"Sin", "[", "\[Gamma]f", "]"}], "ng"], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.499608477452273*^9, 3.4996085283445683`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"nfa", "=", 
+  RowBox[{"ng", " ", 
+   RowBox[{"Sin", "[", "\[Alpha]f", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.499608368317788*^9, 3.499608391341674*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Messung mit dem modernen Refraktometer von Zeiss", "Section"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nf", "="}], ";"}]], "Input",
+ CellChangeTimes->{{3.499607979883174*^9, 3.499607985486782*^9}}]
+}, Open  ]]
+},
+WindowSize->{640, 750},
+WindowMargins->{{88, Automatic}, {-375, Automatic}},
+FrontEndVersion->"7.0 for Linux x86 (64-bit) (February 25, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 144, 3, 101, "Section"],
+Cell[CellGroupData[{
+Cell[736, 29, 534, 14, 72, "Input"],
+Cell[1273, 45, 143, 3, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1465, 54, 123, 1, 73, "Section"],
+Cell[1591, 57, 497, 13, 77, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2125, 75, 144, 3, 73, "Section"],
+Cell[2272, 80, 236, 5, 31, "Input"],
+Cell[2511, 87, 252, 6, 49, "Input"],
+Cell[2766, 95, 180, 4, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2983, 104, 67, 0, 101, "Section"],
+Cell[3053, 106, 129, 3, 31, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

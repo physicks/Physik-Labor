@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     68320,       1452]
-NotebookOptionsPosition[     66801,       1398]
-NotebookOutlinePosition[     67138,       1413]
-CellTagsIndexPosition[     67095,       1410]
+NotebookDataLength[     68234,       1447]
+NotebookOptionsPosition[     66767,       1395]
+NotebookOutlinePosition[     67105,       1410]
+CellTagsIndexPosition[     67062,       1407]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1196,7 +1196,7 @@ Cell[BoxData[
       Hold[$CellContext`\[Xi]$$], 0, 40 Degree}, {
       Hold[$CellContext`\[Psi]$$], 0, 2 Pi}, {
       Hold[$CellContext`\[Delta]$$], 0, 2 Pi}}, Typeset`size$$ = {
-    360., {96., 99.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    360., {73., 76.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
     Typeset`skipInitDone$$ = True, $CellContext`\[Gamma]$82339$$ = 
     0, $CellContext`\[Xi]$82340$$ = 0, $CellContext`\[Psi]$82341$$ = 
     0, $CellContext`\[Delta]$82342$$ = 0}, 
@@ -1226,7 +1226,7 @@ $CellContext`i15p2, $CellContext`i0p2}, Joined -> True],
          Pi}, {$CellContext`\[Xi]$$, 0, 40 Degree}, {$CellContext`\[Psi]$$, 0,
           2 Pi}, {$CellContext`\[Delta]$$, 0, 2 Pi}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{405., {178., 183.}},
+     ImageSizeCache->{405., {155., 160.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1238,8 +1238,6 @@ $CellContext`i15p2, $CellContext`i0p2}, Joined -> True],
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{3.499422979764164*^9}]
 }, Open  ]],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  TagBox[
@@ -1286,7 +1284,7 @@ $CellContext`i15p2, $CellContext`i0p2}, Joined -> True],
          Pi}, {$CellContext`\[Xi]$$, 0, 40 Degree}, {$CellContext`\[Psi]$$, 0,
           2 Pi}, {$CellContext`\[Delta]$$, 0, 2 Pi}}, "Options" :> {}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{405., {213., 218.}},
+     ImageSizeCache->{405., {178., 183.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1354,8 +1352,7 @@ $CellContext`i15p2, $CellContext`i0p2}, Joined -> True],
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.499422980361547*^9}]
-}, Open  ]],
+ CellChangeTimes->{3.499422980361547*^9}],
 
 Cell[CellGroupData[{
 
@@ -1397,7 +1394,7 @@ Cell[BoxData["0.4899998725936037`"], "Output",
 }, Open  ]]
 },
 WindowSize->{1129, 757},
-WindowMargins->{{Automatic, -1}, {Automatic, 0}},
+WindowMargins->{{Automatic, 44}, {22, Automatic}},
 FrontEndVersion->"7.0 for Linux x86 (64-bit) (February 25, 2009)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1433,26 +1430,24 @@ Cell[41607, 803, 1853, 39, 247, "Output"]
 }, Open  ]],
 Cell[43475, 845, 4250, 138, 172, "Input"],
 Cell[47728, 985, 780, 15, 31, "Input"],
-Cell[48511, 1002, 6260, 123, 375, InheritFromParent],
+Cell[48511, 1002, 6260, 123, 375, "Input"],
 Cell[CellGroupData[{
 Cell[54796, 1129, 2236, 55, 95, "Input"],
-Cell[57035, 1186, 2775, 52, 378, "Output"]
+Cell[57035, 1186, 2775, 52, 332, "Output"]
+}, Open  ]],
+Cell[59825, 1241, 2813, 54, 378, "Input"],
+Cell[62641, 1297, 3089, 57, 378, "Output"],
+Cell[CellGroupData[{
+Cell[65755, 1358, 243, 7, 31, "Input"],
+Cell[66001, 1367, 139, 2, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[59847, 1243, 2813, 54, 448, InheritFromParent],
-Cell[62663, 1299, 3089, 57, 378, "Output"]
+Cell[66177, 1374, 143, 3, 31, "Input"],
+Cell[66323, 1379, 131, 2, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[65789, 1361, 243, 7, 31, "Input"],
-Cell[66035, 1370, 139, 2, 31, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[66211, 1377, 143, 3, 31, "Input"],
-Cell[66357, 1382, 131, 2, 31, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[66525, 1389, 147, 3, 48, "Input"],
-Cell[66675, 1394, 110, 1, 31, "Output"]
+Cell[66491, 1386, 147, 3, 48, "Input"],
+Cell[66641, 1391, 110, 1, 31, "Output"]
 }, Open  ]]
 }
 ]

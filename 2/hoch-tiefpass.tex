@@ -6,41 +6,62 @@
 \usepackage[]{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage[]{graphicx}
+\usepackage{ngerman}
 \begin{document}
 
 \section{Aufgabenstellung}
 \begin{itemize}
   \item Messen des Frequenz-/Phasengangs eines RC Hochpasses
   \item Messen des Frequenz-/Phasengangs eines RC Tiefpasses
+  \item Berechnen der Grenzfrequenz und der Kapazität
   \item Errechnen der Kapazität durch Messen des Spannungsverlaufs eines RC glieds als Integrator
   \item Errechnen der Kapazität durch Messen des Spannungsverlaufs eines RC glieds als Differentiator
 \end{itemize}
 
 \section{Voraussetzungen}
-  Der Wiederstand des RC Glieds kann Komplex als die Summe der Impedanzen dargestellt werden. Da die Impedanz des Kondensators frequenzabhängig ist hat man je nach Frequenz unterschiedliches Verhalten der Schaltung(frequenzabhängiger Spannungsteiler). 
+  Der Widerstand des RC Glieds kann komplex als die Summe der Impedanzen dargestellt werden. Da die Impedanz des Kondensators frequenzabhängig ist hat man je nach Frequenz unterschiedliches Verhalten der Schaltung(frequenzabhängiger Spannungsteiler). 
+
+  Aus der komplexen Rechnung folgen nun Folgende Formeln
+
+  Grenzfrequenz eines RC Glieds
+
+  \begin{align}
+    \nu_g = \frac{1}{2 \pi R C} \quad
+    \Delta \nu_g = \left | \frac{-1}{2 \pi R^2 C} \right | \Delta R + \left | \frac{-1}{2 \pi R C^2}\right | \Delta C
+  \end{align}
+
+Beim Tiefpass lässt sich bei großen Frequenzen folgende Nähnerung für die Kapazität angeben
+\begin{align}
+  C = \frac{U_E}{R}\frac{dt}{d U_A}  
+\end{align}
+
+Für den Hochpass lässt sich bei kleinen Frequenzen folgende Näherung für die Kapazität machen.
+\begin{align}
+  C=\frac{U_A}{R}\frac{dt}{d U_E}  
+\end{align}
 
 \section{Versuchsaufbau}
 Bei allen Versuchen verwenden wir ein RC Serienglied.
-CH1 des Oszilloskops wird jeweils uber das ganze RC Glied gemessen.
-CH2 wird jenem Element gemessen am den die Ausgangsspannung anliegt.
+CH1 des Oszilloskops wird jeweils über das ganze RC Glied gemessen.
+CH2 wird an jenem Element gemessen am den die Ausgangsspannung anliegt.
 \subsection{Hochpass / Differentiator}
   Die Ausgangsspannung wird am Widerstand abgenommen. Die Masse des Oszilloskops befindet sich am Widerstand auf der Seite der Versorgung.
 \subsection{Tiefpass/Integrator}
-  Die Ausgangsspannung wird am Kondensator abgenommen. Die Masse des Oszilloskops befindet sich am Kondensators auf der Seit der Versorgung.
+  Die Ausgangsspannung wird am Kondensator abgenommen. Die Masse des Oszilloskops befindet sich am Kondensator auf der Seite der Versorgung.
 
 \section{Geräteliste}
 \begin{itemize}
   \item Oszilloskop Hameg
   \item USB Oszilloskop DSO220
   \item Funktionsgenerator Hameg
-  \item Widerstand 1800$\Omega$
-  \item Kapazität 0.1$\mu$F
+  \item Widerstand $(1800\pm2\text{\%})\Omega$
+  \item Kapazität $(0.1\pm10\text{\%})\mu$F
 \end{itemize}
 
 \section{Messungen}
 Die Eingangsamplitude beträgt jeweils 4V.
 \subsection{Hochpass}
-Es werden bei unterschiedlichen Frequenzen der Phasenunterschied und die Amplutide der Ausgangsspannung gemessen.
+Es werden bei unterschiedlichen Frequenzen der Phasenunterschied und die Amplitude der Ausgangsspannung gemessen.
 
 \begin{table}[ht]
   \centering
@@ -91,7 +112,7 @@ Es werden bei unterschiedlichen Frequenzen der Phasenunterschied und die Ampluti
 \subsection{Tiefpass}
 \begin{table}[ht]
   \centering
-  \caption{Ausgangsamplutide und Phasenunterschied abhängig von der Frequenz}
+  \caption{Ausgangsamplitude und Phasenunterschied abhängig von der Frequenz}
   \begin{itemize}
     \item f \dots Frequenz
     \item $\phi$ \dots Phasenunterschied
@@ -143,7 +164,7 @@ Aufnahme des Oszilloskopbildes mit dem USB Oszilloskops
 \begin{center}
   \includegraphics[width=0.8 \textwidth]{int.eps}
 \end{center}
-\caption{RC im Integratorbetrieb}
+\caption{RC-Glied im Integratorbetrieb}
 \label{fig:5}
 \end{figure}
 
@@ -178,14 +199,6 @@ Aufnahme des Oszilloskopbildes mit dem USB Oszilloskops
   \caption{Phasendiagramm des Hochpasses}
   \label{fig:2}
 \end{figure}
-Aus den Abbildungen kann man die Grenzfrequenz ablesen. Diese liegt bei der Phase von $45^\circ$ oder bei einer Dämpfung von $\frac{1} {\sqrt{2}}$
-\begin{align}
-  \nu_g ~= 855 Hz
-\end{align}
-Mit der Grenzfrequenz kann man nun die Kapazität errechnen.
-\begin{align}
-  C=\frac{1}{2 \nu \pi R}=0.1034\mu F  
-\end{align}
 \newpage
 \subsection{Tiefpass}
 \begin{figure}[ht]
@@ -203,30 +216,75 @@ Mit der Grenzfrequenz kann man nun die Kapazität errechnen.
   \caption{Phasendiagramm des Tiefpasses}
   \label{fig:4}
 \end{figure}
-Aus den Abbildungen kann man die Grenzfrequenz ablesen. Diese liegt bei der Phase von $45^\circ$ oder bei einer Dämpfung von $\frac{1} {\sqrt{2}}$
+
+\subsection{Berechnung von Grenzfrequenz und Kapazität aus den Bodediagrammen}
+
+Aus dem Frequenzgang kann man jeweils bei einer Dämpfung von ca 0.7 die Grenzfrequenz ablesen.
+Bei dem Phasendiagramm geht dies bei 45 Grad.
+\newpage
+Daraus Resultieren Folgende Werte
+\begin{table}[ht]
+  \centering
+  \caption{Grenzfrequenz aus den Bodediagrammen}
+  \begin{tabular}{|r|c|c|}
+    \hline
+    &Frequenzgang&Phasendiagramm \\
+    \hline
+    Hochpass&825$\pm$5&855$\pm$5\\
+    \hline
+    Tiefpass&895$\pm$5&865$\pm$5\\
+    \hline
+  \end{tabular}
+  \label{tab:3}
+\end{table}
+
+Mittelt man diese Werte erhält man 
 \begin{align}
-  \nu_g ~= 855 Hz
+  \nu_g = (860 \pm 30)Hz
 \end{align}
-Mit der Grenzfrequenz kann man nun die Kapazität errechnen.
+
+Aus den Bauelementen kann man über Gleichung 1 ebenfalls die Grenzfrequenz errechnen.
 \begin{align}
-  C =\frac{1}{2 \nu \pi R}=0.1034\mu F  
+  \Delta R = 36 \Omega \quad \Delta C= 0.01 \mu F\\
+  \nu_g = (800\pm100)Hz  
+\end{align}
+
+Mit der Grenzfrequenz aus den Bodediagrammen errechnen wir nun die Kapazität mit Hilfe der Gleichung 1(Der Fehler wird mit der Größtfehlermethode gerechnet).
+\begin{align}
+  C =\frac{1}{2 \nu \pi R}=(0.103 \pm 0.004)\mu F  
 \end{align}
 
 \subsection{Integrator}
-Über die Formel .. lässt sich die Kapazität berechnen.
+
+
+Über die Gleichung 2 lässt sich die Kapazität berechnen.
 \begin{align}
-  C = 0.5 \mu F
+  \frac{dU_A}{dt} = 2 \frac{V}{ms} \quad U_E = 2 V \quad R=1800 \Omega\\ 
+  \Rightarrow C = 0.5 \mu F
 \end{align}
 
 \subsection{Differentiator}
-Über die Formel .. lässt sich die Kapazität berechnen.
+Über die Gleichung 3 lässt sich die Kapazität berechnen.
 \begin{align}
-  C = 0.2 \mu F
+  \frac{dU_E}{dt} = 380 \frac{V}{s} \quad U_A = 0.13 mV \quad R=1800 \Omega\\ 
+  \Rightarrow C = 0.2 \mu F
 \end{align}
 
 
 \section{Zusammenfassung}
-Über Übertragtfunktion und Phasengang lässt sich die Kapazität/Grenzfrequenz relativ schon errechnen. Beim Differentiator/Integratorbetrieb stimmt zwar die Größenordnung aber der Wert liegt daneben. Dies ist möglicherweise darauf zurückzuführen, dass die Oszidaten digital aufgenommen und diese Datein in einem mir unbekannten Format(dso) gespeichert wurden. Ich habe versucht die Daten möglicht richtig zu Plotten, diese können aber einen relativ großen Fehler haben.
+Über Frequenzgang und Phasengang lässt sich die Kapazität/Grenzfrequenz relativ schön errechnen.
+
+\begin{align}
+  C =(0.103 \pm 0.004)\mu F\\
+  \nu_g = (855\pm20)Hz  
+\end{align}
+Beim Differentiator/Integratorbetrieb stimmt zwar die Größenordnung aber der Wert liegt daneben.
+
+\begin{align}
+  C_{INT} = 0.5 \mu F\\
+  C_{DIFF} = 0.2 \mu F
+\end{align}
+Dies ist möglicherweise darauf zurückzuführen, dass die Oszidaten digital aufgenommen und diese Dateien in einem mir unbekannten Format(dso) gespeichert wurden. Ich habe versucht die Daten möglichst richtig zu Plotten, diese haben aber dadurch womöglich einen systematischen Fehler erhalten.
 
 \end{document}
 
