@@ -1,0 +1,102 @@
+%     Created: Don Nov 25 12:00  2010 C
+% Last Change: Don Nov 25 12:00  2010 C
+%
+\documentclass[a4paper]{article}
+\usepackage[]{amsmath}
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Michael Pusterhofer}
+\fancyhead[C]{Refraktometer}
+\fancyhead[R]{G27}
+\fancyfoot[C]{\thepage/\pageref{LastPage} }
+
+\begin{document}
+\section{Aufgabenstellung}
+\begin{itemize}
+  \item Bestimmen der Brechzahl einer Flüssigkeit mit dem Abbe-Refraktometer bei der Wellenlänge einer Natrium D-Linie.
+  \item Überprüfen des Ergebnisses mit einem Zeiss Refraktometer.
+\end{itemize}
+
+\section{Voraussetzungen}
+  \subsection{Brechungsgesetz}
+\begin{align}
+  \frac{n_1}{n_2}=\frac{sin(\gamma_2)}{sin(\gamma_1)}
+  \label{bechungsgesetz}
+\end{align}
+  \subsection{Definition der Brechzahl}
+  \begin{align}
+    n_m = \frac{c_0}{c_m}=\frac{sin(\gamma_0)}{sin(\gamma_m)}
+    \label{brechzahl}
+  \end{align}
+  \subsection{Dispersion}
+  Dispersion tritt auf wenn eine Abhängigkeit von der Wellenlänge/Frequenz vorhanden ist. Bei Licht herrscht Dispersion bei der Brechung.
+  \subsection{Fehlerrechnung}
+  \begin{align}
+    x=f(x_1,x_2,..,x_n)\\
+    \Delta x = \sum_{i=1}^n{\left |\frac{\partial  x}{\partial x_i}\Delta x_i\right |}
+    \label{error}
+  \end{align}
+
+\section{Versuchsaufbau}
+\section{Geräteliste}
+\begin{itemize}
+  \item Refraktometer nach Abbe 
+  \item Refraktometer nach Zeiss
+  \item Flüssigkeit
+  \item Natriumdampflampe
+\end{itemize}
+
+\section{Messung}
+\subsection{Messen der Lotrichtungen vom Messprisma}
+\begin{align}
+  r_1 = \\
+  r_2 = 
+\end{align}
+
+\subsection{Messen des Differenzwinkel zum Lot des Helligkeitsübergangs}
+\begin{align}
+  \gamma=
+\end{align}
+
+\subsection{Messen des Differenzwinkel zum Lot des Helligkeitsübergangs mit Flüssigkeit}
+\begin{align}
+  \gamma_f=
+\end{align}
+
+\subsection{Messung der Brechzahl mit dem Zeiss-Refraktometer}
+\begin{align}
+  n_{fz}=  
+\end{align}
+
+\section{Rechnung/Auswertung}
+Fehlerrechnung nach \ref{error}
+\subsection{Kantenwinkel des Messprismas}
+\begin{align}
+ \phi = 180-\left| r_1-r_2 \right|=\\
+\end{align}
+
+\subsection{Berechnung der Brechzahl des Messprismas}
+\begin{align}
+  n_g=\sqrt{\left(\frac{sin \gamma + cos \phi}{sin \phi}\right)^2+1}=
+  \label{}
+\end{align}
+
+\subsection{Berechnung der Brechzahl der Flüssigkeit}
+\begin{align}
+  \alpha_f &= \phi - arcsin\left(\frac{sin(\gamma_f)}{n_g}\right)=\\
+  n_f&=n_g sin(\alpha_f)= \\
+\end{align}
+
+\section{Zusammenfassung}
+\end{document}
+
+
+
+

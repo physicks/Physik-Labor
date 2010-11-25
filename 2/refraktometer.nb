@@ -10,16 +10,51 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[      3993,        145]
-NotebookOptionsPosition[      3198,        112]
-NotebookOutlinePosition[      3537,        127]
-CellTagsIndexPosition[      3494,        124]
+NotebookDataLength[     10944,        350]
+NotebookOptionsPosition[      9770,        304]
+NotebookOutlinePosition[     10108,        319]
+CellTagsIndexPosition[     10065,        316]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"GError", "[", 
+      RowBox[{"a_", ",", "b_", ",", "c_"}], "]"}], ":=", " ", 
+     RowBox[{"(", 
+      RowBox[{"Total", "[", 
+       RowBox[{
+        RowBox[{"Map", "[", 
+         RowBox[{"Abs", ",", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{"D", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Table", "[", 
+               RowBox[{"a", ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "1", ",", 
+                  RowBox[{"Length", "[", "b", "]"}]}], "}"}]}], "]"}], ",", 
+              "b"}], "}"}]}], "]"}]}], "]"}], "*", "c"}], "]"}], ")"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Gauss", "[", "a_", "]"}], ":=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Mean", "[", "a", "]"}], ",", 
+       FractionBox[
+        RowBox[{"StandardDeviation", "[", "a", "]"}], 
+        SqrtBox[
+         RowBox[{"Length", "[", "a", "]"}]]]}], "}"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.49969713298094*^9, 3.499697154091208*^9}}],
 
 Cell[CellGroupData[{
+
 Cell["\<\
 Bestimmung des Kantenwinkels \[Phi] am Messprisma\
 \>", "Section",
@@ -46,7 +81,8 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"177", ",", "0"}], "}"}]], "Output",
- CellChangeTimes->{{3.499607056578442*^9, 3.4996070897291527`*^9}}]
+ CellChangeTimes->{{3.499607056578442*^9, 3.4996070897291527`*^9}, 
+   3.499697156966239*^9, 3.499697668628072*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -55,20 +91,79 @@ Cell[CellGroupData[{
 Cell["Bestimmund der Brechzahl des Prismas", "Section",
  CellChangeTimes->{{3.499607143552322*^9, 3.4996071675259733`*^9}}],
 
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{
-  RowBox[{"\[Gamma]", "=", "0"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"ng", "=", 
-  SqrtBox[
-   RowBox[{
-    RowBox[{"(", 
-     FractionBox[
-      RowBox[{
-       RowBox[{"Sin", " ", "[", "\[Gamma]", "]"}], " ", "+", " ", 
-       RowBox[{"Cos", " ", "[", "\[Phi]", "]"}]}], 
-      RowBox[{"Sin", "[", "\[Phi]", "]"}]], ")"}], "+", "1"}]]}]}], "Input",
+  RowBox[{"\[Gamma]", "=", "0"}], ";", 
+  RowBox[{"d\[Gamma]", "=", "1"}], ";"}]], "Input",
  CellChangeTimes->{{3.499607544808647*^9, 3.499607547205118*^9}, {
-  3.499608286233964*^9, 3.4996083530191803`*^9}}]
+  3.499608286233964*^9, 3.4996083530191803`*^9}, {3.499696734663147*^9, 
+  3.4996967709505777`*^9}, {3.499697212946113*^9, 3.499697213958466*^9}, {
+  3.499697355710437*^9, 3.499697358426413*^9}, {3.4996973945990143`*^9, 
+  3.499697401189971*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fNg", "[", 
+   RowBox[{
+   "v\[Gamma]_", ",", "dv\[Gamma]_", ",", "v\[Phi]_", ",", "dv\[Phi]_"}], 
+   "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "f", ",", "fe", ",", "\[Gamma]", ",", "d\[Gamma]", ",", "\[Phi]", ",", 
+      "d\[Phi]"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"f", "=", 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"Sin", " ", "[", "\[Gamma]", "]"}], " ", "+", " ", 
+           RowBox[{"Cos", " ", "[", "\[Phi]", "]"}]}], 
+          RowBox[{"Sin", "[", "\[Phi]", "]"}]], ")"}], "+", "1"}]]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"fe", " ", "=", " ", 
+      RowBox[{"GError", "[", 
+       RowBox[{"f", ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Gamma]", ",", "\[Phi]"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"d\[Gamma]", ",", "d\[Phi]"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"f", ",", "fe"}], "}"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\[Gamma]", "\[Rule]", "v\[Gamma]"}], ",", 
+        RowBox[{"\[Phi]", "\[Rule]", "v\[Phi]"}], ",", 
+        RowBox[{"d\[Gamma]", "\[Rule]", "dv\[Gamma]"}], ",", 
+        RowBox[{"d\[Phi]", "\[Rule]", "dv\[Phi]"}]}], "}"}]}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.499697195082519*^9, 3.499697349923283*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ng", "=", 
+  RowBox[{
+   RowBox[{"fNg", "[", 
+    RowBox[{"\[Gamma]", ",", "d\[Gamma]", ",", 
+     RowBox[{"\[Phi]", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"\[Phi]", " ", "[", 
+      RowBox[{"[", "2", "]"}], "]"}]}], "]"}], "//", "N"}]}]], "Input",
+ CellChangeTimes->{{3.499697362301064*^9, 3.499697414147369*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.243496248322133`", ",", "0.45817771726799383`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.499697391032445*^9, 3.499697414907902*^9}, 
+   3.499697669154303*^9}]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -80,24 +175,120 @@ Bestimmung der Brechzahl der Fl\[UDoubleDot]ssigkeit\
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"\[Gamma]f", "="}], ";"}]], "Input",
+  RowBox[{"f\[Alpha]f", "[", 
+   RowBox[{
+   "v\[Gamma]f_", ",", "dv\[Gamma]f_", ",", "v\[Phi]_", ",", "dv\[Phi]_", ",",
+     "vng_", ",", "dvng_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "f", ",", "fe", ",", "\[Gamma]f", ",", "d\[Gamma]f", ",", "\[Phi]", ",", 
+      "d\[Phi]", ",", "ng", ",", "dng"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"f", "=", 
+      RowBox[{"\[Phi]", "-", 
+       RowBox[{"ArcSin", "[", 
+        FractionBox[
+         RowBox[{"Sin", "[", "\[Gamma]f", "]"}], "ng"], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"fe", " ", "=", " ", 
+      RowBox[{"GError", "[", 
+       RowBox[{"f", ",", 
+        RowBox[{"{", 
+         RowBox[{"\[Gamma]f", ",", "\[Phi]", ",", "ng"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"d\[Gamma]f", ",", "d\[Phi]", ",", "dng"}], "}"}]}], "]"}]}],
+      ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"f", ",", "fe"}], "}"}], "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\[Gamma]f", "\[Rule]", "v\[Gamma]f"}], ",", 
+        RowBox[{"\[Phi]", "\[Rule]", "v\[Phi]"}], ",", 
+        RowBox[{"ng", "\[Rule]", "vng"}], ",", 
+        RowBox[{"d\[Gamma]f", "\[Rule]", "dv\[Gamma]f"}], ",", 
+        RowBox[{"d\[Phi]", "\[Rule]", "dv\[Phi]"}], ",", 
+        RowBox[{"dng", "\[Rule]", "dvng"}]}], "}"}]}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.499697482249427*^9, 3.499697598669243*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Gamma]f", "=", "20"}], ";", " ", 
+  RowBox[{"d\[Gamma]f", "=", "1"}], ";"}]], "Input",
  CellChangeTimes->{{3.499607654177782*^9, 3.499607662130145*^9}, {
   3.499608385687049*^9, 3.4996083879816313`*^9}, {3.499608467119573*^9, 
-  3.499608469372011*^9}}],
+  3.499608469372011*^9}, {3.499697448079908*^9, 3.499697459858142*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"\[Alpha]f", "=", 
-  RowBox[{"\[Phi]", "-", 
-   RowBox[{"ArcSin", "[", 
-    FractionBox[
-     RowBox[{"Sin", "[", "\[Gamma]f", "]"}], "ng"], "]"}]}]}]], "Input",
- CellChangeTimes->{{3.499608477452273*^9, 3.4996085283445683`*^9}}],
+  RowBox[{"f\[Alpha]f", "[", 
+   RowBox[{"\[Gamma]f", ",", "d\[Gamma]f", ",", 
+    RowBox[{"\[Phi]", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], ",", 
+    RowBox[{"\[Phi]", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], ",", 
+    RowBox[{"ng", " ", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], ",", 
+    RowBox[{"ng", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.499608477452273*^9, 3.4996085283445683`*^9}, {
+  3.4996974695649014`*^9, 3.499697470491473*^9}, {3.49969760644419*^9, 
+  3.499697662451495*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"176.17554756232232`", ",", "0.8817720430812441`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.4996971587352123`*^9, {3.499697663747201*^9, 3.499697669281818*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"nfa", "=", 
-  RowBox[{"ng", " ", 
-   RowBox[{"Sin", "[", "\[Alpha]f", "]"}]}]}]], "Input",
- CellChangeTimes->{{3.499608368317788*^9, 3.499608391341674*^9}}]
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ng", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "  ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"\[Alpha]f", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"ng", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "  ", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"\[Alpha]f", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "]"}], 
+      RowBox[{"\[Alpha]f", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"\[Alpha]f", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], 
+      RowBox[{"ng", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.499608368317788*^9, 3.499608391341674*^9}, {
+  3.499697700858914*^9, 3.499697848353444*^9}, {3.499697885032312*^9, 
+  3.499697891599128*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.3032570002994264`", ",", "1.1751118380016559`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.499697159496435*^9, 3.499697669638556*^9, 
+  3.499697786424934*^9, 3.499697849720244*^9, 3.4996978920623302`*^9}]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -107,11 +298,12 @@ Cell["Messung mit dem modernen Refraktometer von Zeiss", "Section"],
 Cell[BoxData[
  RowBox[{
   RowBox[{"nf", "="}], ";"}]], "Input",
- CellChangeTimes->{{3.499607979883174*^9, 3.499607985486782*^9}}]
+ CellChangeTimes->{{3.499607979883174*^9, 3.499607985486782*^9}},
+ EmphasizeSyntaxErrors->True]
 }, Open  ]]
 },
-WindowSize->{640, 750},
-WindowMargins->{{88, Automatic}, {-375, Automatic}},
+WindowSize->{959, 865},
+WindowMargins->{{137, Automatic}, {52, Automatic}},
 FrontEndVersion->"7.0 for Linux x86 (64-bit) (February 25, 2009)",
 StyleDefinitions->"Default.nb"
 ]
@@ -126,30 +318,42 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[545, 20, 1133, 33, 93, "Input"],
 Cell[CellGroupData[{
-Cell[567, 22, 144, 3, 101, "Section"],
+Cell[1703, 57, 144, 3, 73, "Section"],
 Cell[CellGroupData[{
-Cell[736, 29, 534, 14, 72, "Input"],
-Cell[1273, 45, 143, 3, 31, "Output"]
+Cell[1872, 64, 534, 14, 72, "Input"],
+Cell[2409, 80, 191, 4, 31, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1465, 54, 123, 1, 73, "Section"],
-Cell[1591, 57, 497, 13, 77, "Input"]
+Cell[2649, 90, 123, 1, 73, "Section"],
+Cell[2775, 93, 429, 8, 31, "Input"],
+Cell[3207, 103, 1484, 41, 155, "Input"],
+Cell[CellGroupData[{
+Cell[4716, 148, 362, 9, 31, "Input"],
+Cell[5081, 159, 204, 5, 31, "Output"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2125, 75, 144, 3, 73, "Section"],
-Cell[2272, 80, 236, 5, 31, "Input"],
-Cell[2511, 87, 252, 6, 49, "Input"],
-Cell[2766, 95, 180, 4, 31, "Input"]
+Cell[5334, 170, 144, 3, 73, "Section"],
+Cell[5481, 175, 1531, 39, 145, "Input"],
+Cell[7015, 216, 335, 6, 31, "Input"],
+Cell[CellGroupData[{
+Cell[7375, 226, 583, 14, 31, "Input"],
+Cell[7961, 242, 205, 5, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2983, 104, 67, 0, 101, "Section"],
-Cell[3053, 106, 129, 3, 31, "Input"]
+Cell[8203, 252, 1023, 30, 31, "Input"],
+Cell[9229, 284, 247, 5, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9525, 295, 67, 0, 73, "Section"],
+Cell[9595, 297, 159, 4, 31, "Input"]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
