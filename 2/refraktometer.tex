@@ -52,49 +52,182 @@
   \item Flüssigkeit
   \item Natriumdampflampe
 \end{itemize}
-
+\newpage
 \section{Messung}
-\subsection{Messen der Lotrichtungen vom Messprisma}
-\begin{align}
-  r_1 = \\
-  r_2 = 
-\end{align}
 
+\subsection{Messen der Lotrichtungen vom Messprisma}
+\begin{table}[ht]
+				\centering
+				\caption{Messung der Lotrichtung}
+				\begin{itemize}
+								\item r1 \dots Lotrichtung 1, U=$\pm 2'$
+								\item r2 \dots Lotrichtung 2, U=$\pm 2'$
+				\end{itemize}
+				\begin{tabular}{|c|c|}
+								\hline
+								r1&r2\\
+								\hline
+								$-2.5^\circ 0'$	& $115.5^\circ 20'$ \\
+								\hline
+								$-2.5^\circ 28'$	& $114.5^\circ 22'$ \\
+								\hline
+								$-2.5^\circ 28'$	& $114.5^\circ 24'$ \\
+								\hline
+				\end{tabular}
+				\label{tab:lot}
+\end{table}
 \subsection{Messen des Differenzwinkel zum Lot des Helligkeitsübergangs}
-\begin{align}
-  \gamma=
-\end{align}
+\begin{table}[ht]
+				\centering
+				\caption{Maximaler Brechungswinkel bei Luft}
+				\begin{itemize}
+								\item $\gamma$ \dots Differenzwinkel, U = $\pm 2'$
+				\end{itemize}
+				\begin{tabular}{|c|}\hline
+								$\gamma$\\ \hline
+								$170^\circ 0'$\\\hline
+								$170^\circ 0'$\\\hline
+								$169.5^\circ 22'$\\\hline
+								$169.5^\circ 26'$\\\hline
+								$169.5^\circ 26'$\\\hline
+								$169.5^\circ 26'$\\\hline
+				\end{tabular}
+				\label{tab:luft}
+\end{table}
 
 \subsection{Messen des Differenzwinkel zum Lot des Helligkeitsübergangs mit Flüssigkeit}
-\begin{align}
-  \gamma_f=
-\end{align}
+\subsubsection{Glycerin}
+\begin{table}[ht]
+				\centering
+				\caption{Maximaler Brechungswinkel bei Glycerin}
+				\begin{itemize}
+								\item $\gamma_w$\dots Maximaler Brechungswinkel bei Glycerin,U=$2'$
+				\end{itemize}
+				\begin{tabular}{|c|}\hline
+								$\gamma_f$\\\hline
+				$126.5^\circ 0'$\\	\hline
+				$126.0^\circ 26'$\\	\hline
+				$126.0^\circ 28'$\\	\hline
+				\end{tabular}
+				\label{tab:glycerin}
+\end{table}
+\subsubsection{Wasser}
+\begin{table}[ht]
+				\centering
+				\caption{Maximaler Brechungswinkel bei Wasser}
+				\begin{itemize}
+								\item $\gamma_w$\dots Maximaler Brechungswinkel bei Wasser,U=$2'$
+				\end{itemize}
+				\begin{tabular}{|c|}\hline
+								$\gamma_w$\\\hline
+				$138.0^\circ 12'$\\	\hline
+				$138.0^\circ 14'$\\	\hline
+				$138.0^\circ 10'$\\	\hline
+				\end{tabular}
+				\label{tab:wasser}
+\end{table}
 
 \subsection{Messung der Brechzahl mit dem Zeiss-Refraktometer}
+\subsubsection{Glycerin}
 \begin{align}
-  n_{fz}=  
+	n_f=1.456\pm 0.001				
+\end{align}
+\subsubsection{Wasser}
+\begin{align}
+	n_f2=1.336\pm 0.001				
 \end{align}
 
 \section{Rechnung/Auswertung}
 Fehlerrechnung nach \ref{error}
 \subsection{Kantenwinkel des Messprismas}
 \begin{align}
- \phi = 180-\left| r_1-r_2 \right|=\\
+ \phi = 180-\left| r_1-r_2 \right|
 \end{align}
+\begin{table}[ht]
+				\centering
+				\caption{Brechender Winkel des Messprismas}
+				\begin{itemize}
+								\item $\phi$ \dots Brechender Winkel
+								\item $\Delta \phi$ \dots Größtfehler Brechender Winkel
+				\end{itemize}
+				\begin{tabular}{|c|c|}\hline
+					$\phi/Grad$&$\Delta \phi/Grad$\\\hline
+				 61.6667 & 0.0666667 \\\hline
+				 63.1 & 0.0666667 \\\hline
+				 63.0667 & 0.0666667\\\hline
+				\end{tabular}
+				\label{tab:brech}
+\end{table}
+\begin{align}
+				\text{Mittelwert nach Gauss:}\quad
+	\phi = (62.6 \pm 0.5)^\circ
+\end{align}
+
 
 \subsection{Berechnung der Brechzahl des Messprismas}
 \begin{align}
-  n_g=\sqrt{\left(\frac{sin \gamma + cos \phi}{sin \phi}\right)^2+1}=
-  \label{}
+  n_g=\sqrt{\left(\frac{sin \gamma + cos \phi}{sin \phi}\right)^2+1}
+\end{align}
+\begin{table}[ht]
+				\centering
+				\caption{Brechzahl des Messprismas}
+				\begin{itemize}
+								\item $n_g$ \dots Brechzahl
+								\item $\Delta n_g$ \dots Größtfehler der Brechzahl
+				\end{itemize}
+				\begin{tabular}{|c|c|}\hline
+					$n_g$&$\Delta n_g$\\\hline
+				 1.75186 & 0.0124331 \\\hline
+				 1.75186 & 0.0124331 \\\hline
+				 1.75062 & 0.0124255 \\\hline
+				 1.75124 & 0.0124293 \\\hline
+				 1.75124 & 0.0124293 \\\hline
+				 1.75124 & 0.0124293 \\\hline
+				\end{tabular}
+				\label{tab:brechzahlglas}
+\end{table}
+\begin{align}
+				\text{Mittelwert nach Gauss:}\quad
+	n_g = 1.7513\pm0.0002 
 \end{align}
 
-\subsection{Berechnung der Brechzahl der Flüssigkeit}
+\subsection{Berechnung der Brechzahl der Flüssigkeiten}
 \begin{align}
-  \alpha_f &= \phi - arcsin\left(\frac{sin(\gamma_f)}{n_g}\right)=\\
-  n_f&=n_g sin(\alpha_f)= \\
+  n &=n_g sin\left( \phi - arcsin\left(\frac{sin(\gamma_f)}{n_g}\right)\right)\\
+\end{align}
+\begin{table}[ht]
+				\centering
+				\caption{Brechungsindex der Flüssigkeiten}
+				\begin{itemize}
+								\item $n_f$ \dots Brechungsindex von Glycerin
+								\item $\Delta n_f$ \dots Größtfehler Brechungsindex von Glycerin
+								\item $n_f2$ \dots  Brechungsindex von Wasser
+								\item $\Delta n_f2$ \dots Größtfehler Brechungsindex von Wasser
+				\end{itemize}
+				\begin{tabular}{|c|c|c|c|}\hline
+								$n_f$&$\Delta n_f$&$n_f2$&$\Delta n_f2$\\\hline
+				 1.45512 & 0.0198069 & 1.33609 & 0.0213668 \\\hline
+				 1.4516 & 0.0198328 & 1.33644 & 0.0213649 \\\hline
+				 1.45544 & 0.0198045 & 1.33573 & 0.0213686 \\\hline
+				\end{tabular}
+				\label{tab:flue}
+\end{table}
+\begin{align}
+				\text{Brechzahl von Glycerin nach Gauss:}\quad n_f&=1.454\pm0.001\\
+				\text{Brechzahl von Wasser nach Gauss:}\quad n_f2&=1.3360 \pm 0.0002	
 \end{align}
 
 \section{Zusammenfassung}
+Durch die Messung haben sich folgende Werte für die Brechzahlen ergeben:
+\begin{align}
+				\text{Brechzahl von Glycerin Abbe:}\quad n_f&=1.45\pm0.02\\
+				\text{Brechzahl von Glycerin Zeiss:}\quad n_f&=1.456\pm0.001\\
+				\text{Brechzahl von Wasser Abbe:}\quad n_f2&=1.34 \pm 0.02	\\
+				\text{Brechzahl von Wasser Zeiss:}\quad n_f2&=1.336 \pm 0.001	
+\end{align}
+
+Die mit dem Abbe-Refraktometer gemessenen Werte stimmen gut mit denen des Zeiss-Refraktometers überein. Die Messabweichungen des Brechenden Winkels kam daher , dass die Apperatur bei dieser Messung sehr empfindlich reagierte.
+
 \end{document}
 
 
