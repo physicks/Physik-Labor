@@ -1,0 +1,158 @@
+%        File: template.tex
+%     Created: Don Nov 25 12:00  2010 C
+% Last Change: Don Nov 25 12:00  2010 C
+%
+\documentclass[a4paper]{article}
+\usepackage[]{amsmath}
+\usepackage{ngerman}
+\usepackage[latin1]{inputenc}
+\usepackage[]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{epstopdf}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Armin Fürst, Michael Pusterhofer}
+\fancyhead[C]{Diode}
+\fancyhead[R]{27}
+\fancyfoot[C]{\thepage/10}
+
+\begin{document}
+\section{Aufgabenstellung}
+\begin{itemize}
+  \item Aufnehmen der Strom- Spannungskennlinie einer Halbleiterdiode.
+  \item	Gleichrichtersdchaltung mit dieser Diode aufbauen. (mit 2 verschiedenen Kondensatoren)
+  \item	Aufnehmen der Spannungsverläufe an 3 charakteristischen Punkten.
+  \item Berechnen des maximalen Aufladestrom am Kondensator in den 2 Schaltungen mit Hilfe des maximalen Spannungswertes am Shunt.
+\end{itemize}
+
+\section{Voraussetzungen}
+In Halbleiterdioden werden die Eigenschaften eines sogenannten p-n-Überganges
+genutzt.
+
+Die Diode wird mit dem Plus-Pol der angelegten Spannung an der p-Schicht und dem Minuspol
+an der n-Schicht in Durchlassrichtung betrieben.
+In Durchlassrichtung gibt es eine Schwellspannung (Diffusionsspannung), ab der der Durchlassstrom eine
+nennenswerte Größe (ca. 1/10 des maximal erlaubten Stromes) annimmt. Sie ist vom verwendeten
+Basismaterial abhängig und beträgt im Fall von Silizium ca. 0.7 V.
+
+Durch Kombination einer oder mehrerer Dioden mit anderen Bauelementen wie
+Widerstand und Kondensator lassen sich Schaltkreise zur Umwandlung einer
+Wechselspannung in eine Gleichspannung, genannt Gleichrichterschaltung, aufbauen.
+
+\section{Versuchsaufbau}
+	\subsection{Aufbau zur Aufnahme der Diodenkennlinie}
+	\begin{figure}[h]
+			\centering
+			\includegraphics{aufbau_diode.jpg}
+			\caption{Aufbau zur Messung der Diodenkennlinie. Die Widerstände betragen zusammen ca 56$\Omega$, und wurden verwenden da kein geeigneter 50$\Omega$ Widerstand vorhanden war.}
+			\label{fig:aufbau_diode}
+	\end{figure}
+	\clearpage
+	\subsection{Einweggleichrichter}
+	\begin{figure}[h]
+			\centering
+			\includegraphics{aufbau_einweg.jpg}
+			\caption{Aufbau zur Aufnahme des Strom- Spannungsverlaufs bei einem Einweggleichrichter. Die 3 Punkte markieren die Messpunkte. Die Messungen wurden für einen Kondensator mit 1000$\mu$ und einen mit 				100$\mu$ durchgeführt. $R_M$ ist ein Shunt zur Strommessung mit 1$\Omega$. $R_L$ = Lastwiderstand mit 100$\Omega$.}
+			\label{fig:aufbau_einweg}
+	\end{figure}
+
+\section{Geräteliste}
+\begin{table}[ht]
+		\caption{Geräteliste}
+		\centering
+		\begin{tabular}{c|c}
+			Gerät & Inventarnummer \\\hline \hline
+			Diode IIV 5408 & \\
+			Shunt 1$\Omega$ & \\
+			2x 22$\Omega$ Widerstand & \\
+			12$\Omega$ Widerstand & \\
+			1mF Kondensator & \\
+			100$\mu$F Kondensator & \\
+			Widerstandskaskade RD-1000 & \\
+			Triple Power Suply HM 8040-3 & \\
+			Funktionsgenerator PHYWE & \\
+			Oszilloskop DSO-220-USB & 3A-Pr.\\
+			2x Fluke 175 & \\
+			PC mit DSO-220-USB Programm & \\
+		\end{tabular}
+	\label{tab:list_tools}
+\end{table}
+
+\clearpage
+
+\section{Messung}
+	\subsection{Diodenkennlinie}
+		\begin{table}[ht]
+				\caption{Messung der Diodenkennlinie in Durchlassrichtung}
+				\begin{itemize}
+					\item N \dots  Messnummer
+					\item U \dots  Spannung an der Diode, $\Delta$U = $\pm$ (1,0\% + 3Digits)
+					\item I \dots  Strom, $\Delta$I = $\pm$ (1,5\% + 3Digits)
+				\end{itemize}
+				\centering
+				\begin{tabular}{c|c|c}
+					N & U/V & I/mA \\\hline \hline
+				 1 & 0.000 & -0.01 \\\hline
+				 2 & 0.490 & -0.01 \\\hline
+				 3 & 0.100 & -0.01 \\\hline
+				 4 & 0.149 & -0.02 \\\hline
+				 5 & 0.195 & -0.01 \\\hline
+				 6 & 0.246 & -0.01 \\\hline
+				 7 & 0.306 & -0.01 \\\hline
+				 8 & 0.344 & -0.01 \\\hline
+				 9 & 0.393 & 0 \\\hline
+				 10 & 0.445 & 0.05 \\\hline
+				 11 & 0.498 & 0.26 \\\hline
+				 12 & 0.548 & 0.92 \\\hline
+				 13 & 0.600 & 3.29 \\\hline
+				 14 & 0.648 & 9.87 \\\hline
+				 15 & 0.684 & 24.07 \\\hline
+				 16 & 0.701 & 37.16 \\\hline
+				 17 & 0.725 & 70.5 \\\hline
+				 18 & 0.749 & 133.1
+				\end{tabular}
+			\label{tab:list_diode}
+		\end{table}
+
+	\subsection{Einweggleichrichter}
+		\subsubsection{Spannungs- und Stromverläufe mit 1000$\mu$ F Kondesator}
+		Für den Spannungsverlauf am Lastwiederstand siehe Abbildung 4 auf Seite 6. \linebreak
+		Für den Stromverlauf am Kondensator siehe Abbildung 5 auf Seite 7.
+		\subsubsection{Spannungs- und Stromverläufe mit 100$\mu$ F Kondesator}
+		Für den Spannungsverlauf am Lastwiderstand siehe Abbildung 6 auf Seite 8. \linebreak
+		Für den Stromverlauf am Kondensator siehe Abbildung 7 auf Seite 9.
+		\subsubsection{Strom- und Spannungsverläufe ohne Kondesator}
+		Siehe Abbildung 8 auf Seite 10.
+\clearpage
+\section{Rechnung/Auswertung}
+	\subsection{Diodenkennlinie}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics{diodenkennlinie.eps}
+			\caption{Diodenkennlinie in Durchlassrichtung. Strom in mA über Spannung in Volt.}
+			\label{fig:diodenkennlinie}
+		\end{figure}
+		
+	\subsection{Maximaler Strom}
+	Da ein 1$\Omega$ Widerstand verwenden wurde kann der Maximale Strom direkt aus den entsprechenden Abbildungen abgelesen werden
+		\subsubsection{Maximaler Strom mit 1mF Kondensator}
+			Aus Abbildung 5 auf Seite 7: I = (600 $\pm$ 100)mA
+		\subsubsection{Maximaler Strom mit 100$\mu$F Kondensator}
+			Aus Abbildung 7 auf Seite 9: I = (240 $\pm$ 40)mA
+
+\clearpage
+\section{Zusammenfassung}
+	\subsection{Diodenkennlinie}
+	Die aufgenommene Diodenkennlinie auf Abbildung 3 Seite 4 sieht wie eine typische Diodenkennlinie einer Siliziumdiode aus.
+	\subsection{Einweggleichrichter}
+	Man erkennt an den Spannungsverläufen am Lastwiderstand sehr gut, dass man eine bessere Glättung durch einen größeren Kondensator erreicht.
+	Ein größerer Kondensator verursacht aber auch einen größeren Ladestrom, was man beim Schaltungsbau in betracht ziehen muss um nicht die Diode zu zerstören.
+	\subsection{Maximaler Ladestrom mit 1mF Kondensator}
+	I = (600 $\pm$ 100)mA
+	\subsection{Maximaler Ladestrom mit 100$\mu$F Kondensator}
+	I = (240 $\pm$ 40)mA
+\end{document}
+
+

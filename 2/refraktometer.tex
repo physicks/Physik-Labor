@@ -12,7 +12,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\fancyhead[L]{Michael Pusterhofer}
+\fancyhead[L]{Armin Fürst}
 \fancyhead[C]{Refraktometer}
 \fancyhead[R]{G27}
 \fancyfoot[C]{\thepage/\pageref{LastPage} }
@@ -25,142 +25,175 @@
 \end{itemize}
 
 \section{Voraussetzungen}
-  \subsection{Brechungsgesetz}
+\subsection{Brechungsgesetz}
 \begin{align}
   \frac{n_1}{n_2}=\frac{sin(\gamma_2)}{sin(\gamma_1)}
   \label{bechungsgesetz}
 \end{align}
-  \subsection{Definition der Brechzahl}
-  \begin{align}
-    n_m = \frac{c_0}{c_m}=\frac{sin(\gamma_0)}{sin(\gamma_m)}
-    \label{brechzahl}
-  \end{align}
-  \subsection{Dispersion}
-  Dispersion tritt auf wenn eine Abhängigkeit von der Wellenlänge/Frequenz vorhanden ist. Bei Licht herrscht Dispersion bei der Brechung.
-  \subsection{Fehlerrechnung}
-  \begin{align}
-    x=f(x_1,x_2,..,x_n)\\
-    \Delta x = \sum_{i=1}^n{\left |\frac{\partial  x}{\partial x_i}\Delta x_i\right |}
-    \label{error}
-  \end{align}
-
+\subsection{Definition der Brechzahl}
+\begin{align}
+  n_m = \frac{c_0}{c_m}=\frac{sin(\gamma_0)}{sin(\gamma_m)}
+  \label{brechzahl}
+\end{align}
+\subsection{Dispersion}
+Dispersion tritt auf wenn eine Abhängigkeit von der Wellenlänge/Frequenz vorhanden ist. Bei Licht herrscht Dispersion bei der Brechung.
+\subsection{Fehlerrechnung}
+\subsubsection{Größtfehler} 
+\begin{align}
+  x=f(x_1,x_2,..,x_n) \quad
+  \Delta x = \sum_{i=1}^n{\left |\frac{\partial  x}{\partial x_i}\Delta x_i\right |}
+  \label{error}
+\end{align}
+\subsubsection{Gauss}
+\begin{align}
+  x = \sum_{i=1}^n{\frac{x_i}{n}} \quad
+  \Delta x = \frac{1}{\sqrt{n}}\sqrt{\sum_{i=1}^n{\frac{(x_i-x)^2}{n-1}}}
+\end{align}
+\newpage
 \section{Versuchsaufbau}
+Verwendet wurde ein Zeiss- bzw ein Abbe-Refraktometer.
+Beim Zeiss-Refraktometer wurde weißes Licht verwendet.
+Die Natriumdampflampe wurde für das Abbe-Refraktometer verwendet.
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{abbe.png}
+  \end{center}
+  \caption{Abbe-Refraktometer. (1) Beleuchtungsprisma, (2) Messprisma, (3) Winkelskala
+(Winkeleinteilung mit Nonius-Skala für Winkelminuten auf der Rückseite), (4) Fernrohr.}
+  \label{fig:abbe}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{zeiss.png}
+  \end{center}
+  \caption{Zeiss-Refraktometer. (1) Beleuchtungsprisma (aufgeklappt), (2) Messprisma, (3)
+Winkelverstellung, (4) Kompensator, (5) Okular.}
+  \label{fig:zeiss}
+\end{figure}
+
 \section{Geräteliste}
 \begin{itemize}
   \item Refraktometer nach Abbe 
   \item Refraktometer nach Zeiss
-  \item Flüssigkeit
   \item Natriumdampflampe
+  \item Glycerin
+  \item Destilliertes Wasser
 \end{itemize}
 \newpage
 \section{Messung}
 
-\subsection{Messen der Lotrichtungen vom Messprisma}
+\subsection{Messen der Lotrichtungen auf die Prismaflächen(Messprismas)}
+Um den Brechenden Winkel des Messprismas zu bestimmen, werden die 2 Lotrichungen auf die Prismenflächen bestimmt. Dies geschieht durch das Suchen des reflektierten Lichtstrahls aus dem Umlenkprisma.
 \begin{table}[ht]
-				\centering
-				\caption{Messung der Lotrichtung}
-				\begin{itemize}
-								\item r1 \dots Lotrichtung 1, U=$\pm 2'$
-								\item r2 \dots Lotrichtung 2, U=$\pm 2'$
-				\end{itemize}
-				\begin{tabular}{|c|c|}
-								\hline
-								r1&r2\\
-								\hline
-								$-2.5^\circ 0'$	& $115.5^\circ 20'$ \\
-								\hline
-								$-2.5^\circ 28'$	& $114.5^\circ 22'$ \\
-								\hline
-								$-2.5^\circ 28'$	& $114.5^\circ 24'$ \\
-								\hline
-				\end{tabular}
-				\label{tab:lot}
-\end{table}
-\subsection{Messen des Differenzwinkel zum Lot des Helligkeitsübergangs}
-\begin{table}[ht]
-				\centering
-				\caption{Maximaler Brechungswinkel bei Luft}
-				\begin{itemize}
-								\item $\gamma$ \dots Differenzwinkel, U = $\pm 2'$
-				\end{itemize}
-				\begin{tabular}{|c|}\hline
-								$\gamma$\\ \hline
-								$170^\circ 0'$\\\hline
-								$170^\circ 0'$\\\hline
-								$169.5^\circ 22'$\\\hline
-								$169.5^\circ 26'$\\\hline
-								$169.5^\circ 26'$\\\hline
-								$169.5^\circ 26'$\\\hline
-				\end{tabular}
-				\label{tab:luft}
+  \caption{Messung der Lotrichtung}
+  \centering
+  \begin{itemize}
+    \item r1 \dots Lotrichtung 1, U=$\pm 2'$
+    \item r2 \dots Lotrichtung 2, U=$\pm 2'$
+  \end{itemize}
+  \begin{tabular}{|c|c|}
+    \hline
+    r1&r2\\
+    \hline
+    $-2.5^\circ 0'$	& $115.5^\circ 20'$ \\
+    \hline
+    $-2.5^\circ 28'$	& $114.5^\circ 22'$ \\
+    \hline
+    $-2.5^\circ 28'$	& $114.5^\circ 24'$ \\
+    \hline
+  \end{tabular}
+  \label{tab:lot}
 \end{table}
 
+\subsection{Messen des Differenzwinkel zum Lot des Helligkeitsübergangs}
+Um nachher die Brechzahl des Messprismas bestimmen zu können wird die Hell-Dunkel Grenze des Messprismas gemessen. Dazu wird das Beleuchtungsprima aufgesetzt aber keine Flüssigkeit aufgetragen.
+\begin{table}[ht]
+  \centering
+  \caption{Maximaler Brechungswinkel bei Luft}
+  \begin{itemize}
+    \item $\gamma$ \dots Differenzwinkel, U = $\pm 2'$
+  \end{itemize}
+  \begin{tabular}{|c|}\hline
+    $\gamma$\\ \hline
+    $170^\circ 0'$\\\hline
+    $170^\circ 0'$\\\hline
+    $169.5^\circ 22'$\\\hline
+    $169.5^\circ 26'$\\\hline
+    $169.5^\circ 26'$\\\hline
+    $169.5^\circ 26'$\\\hline
+  \end{tabular}
+  \label{tab:luft}
+\end{table}
+\newpage
 \subsection{Messen des Differenzwinkel zum Lot des Helligkeitsübergangs mit Flüssigkeit}
+Nun wird um später die Brechzahl der Flüssigkeiten zu bestimmen der Maximale Brechungswinkel gesucht. Dazu wird ein Flüssigkeitsfilm zwischen Messprisma und Beleuchtungsprisma erzeugt bevor die Grenze gemessen wird.
 \subsubsection{Glycerin}
 \begin{table}[ht]
-				\centering
-				\caption{Maximaler Brechungswinkel bei Glycerin}
-				\begin{itemize}
-								\item $\gamma_w$\dots Maximaler Brechungswinkel bei Glycerin,U=$2'$
-				\end{itemize}
-				\begin{tabular}{|c|}\hline
-								$\gamma_f$\\\hline
-				$126.5^\circ 0'$\\	\hline
-				$126.0^\circ 26'$\\	\hline
-				$126.0^\circ 28'$\\	\hline
-				\end{tabular}
-				\label{tab:glycerin}
+  \centering
+  \caption{Maximaler Brechungswinkel bei Glycerin}
+  \begin{itemize}
+    \item $\gamma_{f1}$\dots Maximaler Brechungswinkel bei Glycerin,U=$\pm2'$
+  \end{itemize}
+  \begin{tabular}{|c|}\hline
+    $\gamma_{f1}$\\\hline
+    $126.5^\circ 0'$\\	\hline
+    $126.0^\circ 26'$\\	\hline
+    $126.0^\circ 28'$\\	\hline
+  \end{tabular}
+  \label{tab:glycerin}
 \end{table}
 \subsubsection{Wasser}
 \begin{table}[ht]
-				\centering
-				\caption{Maximaler Brechungswinkel bei Wasser}
-				\begin{itemize}
-								\item $\gamma_w$\dots Maximaler Brechungswinkel bei Wasser,U=$2'$
-				\end{itemize}
-				\begin{tabular}{|c|}\hline
-								$\gamma_w$\\\hline
-				$138.0^\circ 12'$\\	\hline
-				$138.0^\circ 14'$\\	\hline
-				$138.0^\circ 10'$\\	\hline
-				\end{tabular}
-				\label{tab:wasser}
+  \centering
+  \caption{Maximaler Brechungswinkel bei Wasser}
+  \begin{itemize}
+    \item $\gamma_{f2}$\dots Maximaler Brechungswinkel bei Wasser,U=$\pm2'$
+  \end{itemize}
+  \begin{tabular}{|c|}\hline
+    $\gamma_{f2}$\\\hline
+    $138.0^\circ 12'$\\	\hline
+    $138.0^\circ 14'$\\	\hline
+    $138.0^\circ 10'$\\	\hline
+  \end{tabular}
+  \label{tab:wasser}
 \end{table}
 
 \subsection{Messung der Brechzahl mit dem Zeiss-Refraktometer}
+Die Brechzahl kann bei diesem Refraktometer direkt abgelesen werden.
 \subsubsection{Glycerin}
 \begin{align}
-	n_f=1.456\pm 0.001				
+  n_f=1.456\pm 0.001				
 \end{align}
 \subsubsection{Wasser}
 \begin{align}
-	n_f2=1.336\pm 0.001				
+  n_f2=1.336\pm 0.001				
 \end{align}
-
+\newpage
 \section{Rechnung/Auswertung}
-Fehlerrechnung nach \ref{error}
 \subsection{Kantenwinkel des Messprismas}
 \begin{align}
- \phi = 180-\left| r_1-r_2 \right|
+  \phi = 180-\left| r_1-r_2 \right|
 \end{align}
 \begin{table}[ht]
-				\centering
-				\caption{Brechender Winkel des Messprismas}
-				\begin{itemize}
-								\item $\phi$ \dots Brechender Winkel
-								\item $\Delta \phi$ \dots Größtfehler Brechender Winkel
-				\end{itemize}
-				\begin{tabular}{|c|c|}\hline
-					$\phi/Grad$&$\Delta \phi/Grad$\\\hline
-				 61.6667 & 0.0666667 \\\hline
-				 63.1 & 0.0666667 \\\hline
-				 63.0667 & 0.0666667\\\hline
-				\end{tabular}
-				\label{tab:brech}
+  \centering
+  \caption{Brechender Winkel des Messprismas}
+  \begin{itemize}
+    \item $\phi$ \dots Brechender Winkel
+    \item $\Delta \phi$ \dots Größtfehler Brechender Winkel
+  \end{itemize}
+  \begin{tabular}{|c|c|}\hline
+    $\phi/Grad$&$\Delta \phi/Grad$\\\hline
+    61.6667 & 0.0666667 \\\hline
+    63.1 & 0.0666667 \\\hline
+    63.0667 & 0.0666667\\\hline
+  \end{tabular}
+  \label{tab:brech}
 \end{table}
 \begin{align}
-				\text{Mittelwert nach Gauss:}\quad
-	\phi = (62.6 \pm 0.5)^\circ
+  \text{Mittelwert nach Gauss:}\quad
+  \phi = (62.6 \pm 0.5)^\circ
 \end{align}
 
 
@@ -169,61 +202,62 @@ Fehlerrechnung nach \ref{error}
   n_g=\sqrt{\left(\frac{sin \gamma + cos \phi}{sin \phi}\right)^2+1}
 \end{align}
 \begin{table}[ht]
-				\centering
-				\caption{Brechzahl des Messprismas}
-				\begin{itemize}
-								\item $n_g$ \dots Brechzahl
-								\item $\Delta n_g$ \dots Größtfehler der Brechzahl
-				\end{itemize}
-				\begin{tabular}{|c|c|}\hline
-					$n_g$&$\Delta n_g$\\\hline
-				 1.75186 & 0.0124331 \\\hline
-				 1.75186 & 0.0124331 \\\hline
-				 1.75062 & 0.0124255 \\\hline
-				 1.75124 & 0.0124293 \\\hline
-				 1.75124 & 0.0124293 \\\hline
-				 1.75124 & 0.0124293 \\\hline
-				\end{tabular}
-				\label{tab:brechzahlglas}
+  \centering
+  \caption{Brechzahl des Messprismas}
+  \begin{itemize}
+    \item $n_g$ \dots Brechzahl
+    \item $\Delta n_g$ \dots Größtfehler der Brechzahl
+  \end{itemize}
+  \begin{tabular}{|c|c|}\hline
+    $n_g$&$\Delta n_g$\\\hline
+    1.75186 & 0.0124331 \\\hline
+    1.75186 & 0.0124331 \\\hline
+    1.75062 & 0.0124255 \\\hline
+    1.75124 & 0.0124293 \\\hline
+    1.75124 & 0.0124293 \\\hline
+    1.75124 & 0.0124293 \\\hline
+  \end{tabular}
+  \label{tab:brechzahlglas}
 \end{table}
 \begin{align}
-				\text{Mittelwert nach Gauss:}\quad
-	n_g = 1.7513\pm0.0002 
+  \text{Mittelwert nach Gauss:}\quad
+  n_g = 1.7513\pm0.0002 
 \end{align}
 
 \subsection{Berechnung der Brechzahl der Flüssigkeiten}
 \begin{align}
   n &=n_g sin\left( \phi - arcsin\left(\frac{sin(\gamma_f)}{n_g}\right)\right)\\
 \end{align}
+$\gamma_f$ entspricht bei Wasser $\gamma_{f2}$ und bei Glycerin $\gamma_{f1}$
 \begin{table}[ht]
-				\centering
-				\caption{Brechungsindex der Flüssigkeiten}
-				\begin{itemize}
-								\item $n_f$ \dots Brechungsindex von Glycerin
-								\item $\Delta n_f$ \dots Größtfehler Brechungsindex von Glycerin
-								\item $n_f2$ \dots  Brechungsindex von Wasser
-								\item $\Delta n_f2$ \dots Größtfehler Brechungsindex von Wasser
-				\end{itemize}
-				\begin{tabular}{|c|c|c|c|}\hline
-								$n_f$&$\Delta n_f$&$n_f2$&$\Delta n_f2$\\\hline
-				 1.45512 & 0.0198069 & 1.33609 & 0.0213668 \\\hline
-				 1.4516 & 0.0198328 & 1.33644 & 0.0213649 \\\hline
-				 1.45544 & 0.0198045 & 1.33573 & 0.0213686 \\\hline
-				\end{tabular}
-				\label{tab:flue}
+  \centering
+  \caption{Brechungsindex der Flüssigkeiten}
+  \begin{itemize}
+    \item $n_{f1}$ \dots Brechungsindex von Glycerin
+    \item $\Delta n_{f1}$ \dots Größtfehler Brechungsindex von Glycerin
+    \item $n_{f2}$ \dots  Brechungsindex von Wasser
+    \item $\Delta n_{f2}$ \dots Größtfehler Brechungsindex von Wasser
+  \end{itemize}
+  \begin{tabular}{|c|c|c|c|}\hline
+    $n_{f1}$&$\Delta n_{f1}$&$n_{f2}$&$\Delta n_{f2}$\\\hline
+    1.45512 & 0.0198069 & 1.33609 & 0.0213668 \\\hline
+    1.4516 & 0.0198328 & 1.33644 & 0.0213649 \\\hline
+    1.45544 & 0.0198045 & 1.33573 & 0.0213686 \\\hline
+  \end{tabular}
+  \label{tab:flue}
 \end{table}
 \begin{align}
-				\text{Brechzahl von Glycerin nach Gauss:}\quad n_f&=1.454\pm0.001\\
-				\text{Brechzahl von Wasser nach Gauss:}\quad n_f2&=1.3360 \pm 0.0002	
+  \text{Brechzahl von Glycerin nach Gauss:}\quad n_f&=1.454\pm0.001\\
+  \text{Brechzahl von Wasser nach Gauss:}\quad n_f2&=1.3360 \pm 0.0002	
 \end{align}
 
 \section{Zusammenfassung}
 Durch die Messung haben sich folgende Werte für die Brechzahlen ergeben:
 \begin{align}
-				\text{Brechzahl von Glycerin Abbe:}\quad n_f&=1.45\pm0.02\\
-				\text{Brechzahl von Glycerin Zeiss:}\quad n_f&=1.456\pm0.001\\
-				\text{Brechzahl von Wasser Abbe:}\quad n_f2&=1.34 \pm 0.02	\\
-				\text{Brechzahl von Wasser Zeiss:}\quad n_f2&=1.336 \pm 0.001	
+  \text{Brechzahl von Glycerin Abbe:}\quad n_f&=1.45\pm0.02\\
+  \text{Brechzahl von Glycerin Zeiss:}\quad n_f&=1.456\pm0.001\\
+  \text{Brechzahl von Wasser Abbe:}\quad n_f2&=1.34 \pm 0.02	\\
+  \text{Brechzahl von Wasser Zeiss:}\quad n_f2&=1.336 \pm 0.001	
 \end{align}
 
 Die mit dem Abbe-Refraktometer gemessenen Werte stimmen gut mit denen des Zeiss-Refraktometers überein. Die Messabweichungen des Brechenden Winkels kam daher , dass die Apperatur bei dieser Messung sehr empfindlich reagierte.
