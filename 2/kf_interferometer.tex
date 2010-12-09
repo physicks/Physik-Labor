@@ -1,0 +1,176 @@
+%        File: template.tex
+%     Created: Don Nov 25 12:00  2010 C
+% Last Change: Don Nov 25 12:00  2010 C
+%
+\documentclass[a4paper]{article}
+\usepackage[]{amsmath}
+\usepackage{ngerman}
+\usepackage[latin1]{inputenc}
+\usepackage[]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{epstopdf}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Armin Fürst \linebreak Michael Pusterhofer}
+\fancyhead[C]{Interferometer}
+\fancyhead[R]{G27}
+\fancyfoot[C]{\thepage/\pageref{LastPage} }
+
+\begin{document}
+\section{Aufgabenstellung}
+\begin{itemize}
+  \item Kalibrierung des Kompensators mit monochromatischen Licht der Natriumdampflampe mit einer Wellenlänge von 589nm.
+  \item	Bei Weißlicht die Interferenzmuster zur Deckung bringen und Kompensatorwert ablesen. (Nullpunkteinstellung)
+  \item	Einfüllen des Probegases (Stickstoff), Interferenzmuster zur Deckung bringen und Kompensatorwert ablesen.
+  \item Brechzahlberechnung von Stickstoff mit dem gemessenen Weglängenunterschied.
+\end{itemize}
+
+\section{Voraussetzungen}
+L ist die (mechanische) Länge der gleichartig gefertigten Mess- und Referenzkammer.
+Sind sie mit (unterschiedlichen) Gasen der Brechzahlen $n_m$ , $n_r$ gefüllt und die
+Lichtwellen durchlaufen in ihnen die optischen Weglängen:
+\begin{eqnarray}
+l_m=n_m L \\
+l_r=n_r L
+\end{eqnarray}
+
+Zwischen den Wellen entsteht somit der Gangunterschied l:
+\begin{align}
+l=|l_m-l_r|=L|n_m-n_r|
+\end{align}
+
+Wird monochromatisches Licht verwendet und der Gangunterschied durch Drehen des
+Kompensators vom Skalenwert $X_1$ nach $X_2$ um $l=N*\lambda_0$ geändert ($\lambda_0$
+ ist die Vakuumwellenlänge des verwendeten Lichtes), verschiebt sich das Interferenzmuster
+um N Interferenzstreifen. Daraus lässt sich durch Messung der Kompensatorstellung
+bei unterschiedlichen N der Zusammenhang zischen Kompensatorstellung und
+Gangunterschied bestimmen (Ausgleichsgerade mit Steigung $\beta$):
+\begin{align}
+l=N\lambda_0=\lambda_0\beta(X_2-X_1)
+\end{align}
+
+Unter Verwendung von Weißlicht bestimmt man nun die zum Ausgleich des durch
+die Füllung der Messkammer mit Messgas erzeugten Gangunterschiedes notwendige
+Änderung der Kompensatorstellung X. Daraus lässt sich die Brechzahldifferenz
+berechnen:
+\begin{eqnarray}
+|n_m-n_r|=\frac{\lambda_0\beta X}{L} \\
+n_m=n_r+\frac{\lambda_0\beta X}{L}
+\end{eqnarray}
+Größtfehler für $n_m$ mit Fehler für X und $\beta$:
+\begin{align}
+\Delta n_m=|\frac{\lambda_0\beta}{L}|*\Delta X + |\frac{\lambda_0 X}{L}|*\Delta\beta
+\end{align}
+
+\clearpage
+\section{Versuchsaufbau}
+	\begin{figure}[h]
+			\centering
+			\includegraphics{interferometer.jpg}
+			\caption{Interferometer nach Arago Löwe, Sp=Spalt, Kl=Kolimator, Bl=Doppelblende, L=Luftkammer, G=Kammer für Messgas, Pl=drehbare Kompensatorplatte, Pg=feste Kompensatorplatte,
+			H=Hilfsplatte, F=Fernrohr, Ok=Okular, Tr=Messtrommel, A und B = Gaszu- und abführungsstutzen.}
+			\label{fig:aufbau_interferometer}
+	\end{figure}
+	
+	
+\section{Geräteliste}
+\begin{table}[ht]
+		\caption{Geräteliste}
+		\centering
+		\begin{tabular}{c|c}
+			Gerät & Inventarnummer \\\hline \hline
+			Interferometer nach Arago-Löwe & - \\
+			Monochromatische Lichtquelle (Na-Spektrallampe) & - \\
+			Weißlichtquelle (Halogenlampe) & - \\
+			Ballon mit Stickstoff & - \\
+			\end{tabular}
+	\label{tab:list_tools}
+\end{table}
+
+\clearpage
+
+\section{Messung}
+	\subsection{Kalibrierung des Kompensators mit 589nm (Na-Spektrallampe)}
+		\begin{table}[ht]
+				\caption{Messen der Kalibrierungskurve des Kompensators}
+				\begin{itemize}
+					\item M \dots  Messnummer
+					\item X \dots  Gangunterschied, $\Delta$X = $\pm$0.01
+					\item $N_I$ \dots  Anzahl der Inteferenzstreifen um die verschoben wurde, $\Delta N_I$ = $\pm$1
+				\end{itemize}
+				\centering
+				\begin{tabular}{c|c|c}
+				 M & X & $N_I$ \\\hline \hline
+				 1 & -0.16 & 0 \\\hline
+				 2 & 0.15 & 1 \\\hline
+				 3 & 0.43 & 2 \\\hline
+				 4 & 0.74 & 3 \\\hline
+				 5 & 1.04 & 4 \\\hline
+				 6 & 1.34 & 5 \\\hline
+				 7 & 1.64 & 6 \\\hline
+				 8 & 1.93 & 7 \\\hline
+				 9 & 2.23 & 8 \\\hline
+				 10 & 2.52 & 9 \\\hline
+				 11 & 2.81 & 10 \\\hline
+				 12 & 3.10 & 11
+				\end{tabular}
+			\label{tab:list_diode}
+		\end{table}
+
+	\subsection{Nullpunkt bei Weißlicht (Kompensatorwert mit Luft in beiden Kammern und deckungsgleichen Interferenzmustern)}
+	\begin{center}
+	$W_0 = -0.72$ \\
+	$\Delta W_0= \pm0.01$ \\	
+	\end{center}
+	
+	\subsection{Kompensatorwert mit Stickstoff (mit Stickstoff in einer Kammer und deckungsgleichen Interferenzmustern}
+	\begin{center}
+	$N_K = 2.06$ \\
+	$\Delta N_K= \pm0.01$ \\	
+	\end{center}
+\clearpage
+
+\section{Rechnung/Auswertung}
+	\subsection{Kalibrierungskurve}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics{if_kalibrierungskurve.eps}
+			\caption{Kalibrierungskurve des Kompensators. Interferenzstreifen $N_I$ über den Gangunterschied X eingestellt am Kompensator. 
+			Die großen Fehlerbalken in Y-Richtung kommen daher, dass ein Fehler von 1 bei den Interferenzstreifen angenommen wurde. Da die Fehler in X-Richtung nur 0.01 betragen sieht man die Fehlerbalken kaum.}
+			\label{fig:kalibrierungskurve}
+		\end{figure}
+		
+		\subsubsection{Mathematica Fit (LinearModelFit)}
+			\begin{center}
+			$N_I=\beta X+d$ \\
+			\end{center}
+			\begin{center}
+			$d=(0.51 \pm0.02)$ \\
+			$\beta=(3.370 \pm0.008)$ \\
+			\end{center}
+			
+	\subsection{Brechungsindex von Stickstoff nach Gl.6 und Gl.7}
+		\begin{flushleft}
+			$n_L=1.0002926$ \dots Literaturwert\\
+			$\lambda_0=589*10^{-9}$ \dots Na-Spektrallinie\\
+			$L=1m$ \dots Mechanische Länge der Mess und Referenzkammer \\
+			$X=N_K-W_0=(2.78 \pm 0.02)$\\
+		\end{flushleft}
+		\begin{center}
+			$n_N=1.000298119$ \\
+			$\Delta n_N=53*10^{-9}$
+		\end{center}
+	
+\clearpage
+\section{Zusammenfassung}
+	\subsection{Kalibrierungskurve}
+	Die aufgenommene Kalibrierungskurve des Kompensators kommt einer Gerade sehr nahe. 
+	\subsection{Brechnungindex von Stickstoff}
+		\begin{center}
+			$n_N=(1.00029812 \pm6*10^{-8})$
+		\end{center}
+		Der gemessene Wert für Stickstoff stimmt sehr gut mit dem Literaturwert überein.
+\end{document}
