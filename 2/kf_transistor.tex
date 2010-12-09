@@ -1,0 +1,276 @@
+%        File: template.tex
+%     Created: Don Nov 25 12:00  2010 C
+% Last Change: Don Nov 25 12:00  2010 C
+%
+\documentclass[a4paper]{article}
+\usepackage[]{amsmath}
+\usepackage{ngerman}
+\usepackage[latin1]{inputenc}
+\usepackage[]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{epstopdf}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Armin Fürst \linebreak Michael Pusterhofer}
+\fancyhead[C]{Transistor}
+\fancyhead[R]{G27}
+\fancyfoot[C]{\thepage/9}
+
+\begin{document}
+\section{Aufgabenstellung}
+\begin{itemize}
+  \item Ausmessen der Kennlinien eines bipolaren npn-Transistors. ($I_B$=20, 50 und 100$\mu$A)
+  \item	Aufbauen und Vermessen einer Verstärkerschaltung (Emitterschaltung) mit dem zuvor vermessenen bipolaren Transistor. Bei einem Eingangssignal von 1000Hz.
+\end{itemize}
+
+\section{Voraussetzungen}
+In bipolaren Transistoren finden wir die Ströme $I_E$, $I_C$, $I_B$ sowie die Spannungen $U_{CE}$,
+$U_{BE}$, $U_{CB}$. Im allgemeinen beschreibt man den bipolaren Transistor in Emitterschaltung
+mit 4 Kennlinienfeldern. Den Zusammenhang zwischen den
+relevanten Werten wird in einem Vierquadrantenkennlinienfeld dargestellt.
+Die gestrichelten Linien in den Kennlinienfeldern zeigen den Zusammenhang
+zwischen den einzelnen Strömen und Spannungen.
+
+\section{Versuchsaufbau}
+	\subsection{Aufbau zum vermessen des Transistors}
+		\begin{figure}[ht]
+				\centering
+				\includegraphics{kf_transistor1.jpg}
+				\caption{Der Aufbau der verwendet wurde um den bipolaren npn-Transistor zu vermessen.}
+				\label{fig:aufbau_transistor1}
+		\end{figure}
+	\clearpage
+	\subsection{Emitterverstärkerschaltung}
+		\begin{figure}[ht]
+				\centering
+				\includegraphics{kf_transistor2.jpg}
+				\caption{Aufbau des Spannungsverstärkers in Emitterschaltung.}
+				\label{fig:aufbau_transistor2}
+		\end{figure}
+
+\section{Geräteliste}
+\begin{table}[htbp]
+		\caption{Geräteliste.}
+		\centering
+		\begin{tabular}{c|c}
+			Gerät & Inventarnummer \\\hline \hline
+			Transistor BD139 & - \\
+			Stromversorgungsgerät Hameg & - \\
+			2x $\mu$A-Meter & - \\
+			2x Digitalmultimeter: Fluke 175 & - \\
+			Oszilloskop DSO-220-USB & - \\
+			PC mit DSO-220-USB Programm & - \\
+			Oszilloskop Hameg 305 & - \\
+			Experimentier-Platine & - \\
+			2x 100$\mu$F Kondensatoren & - \\
+			Potentiometer 500$\Omega$ & - \\
+			Widerstände: 120k$\Omega$, 12k$\Omega$, 1.2k$\Omega$, 560$\Omega$ & - \\
+			\end{tabular}
+	\label{tab:list_tools}
+\end{table}
+\clearpage
+
+\section{Messung}
+	\subsection{Vermessen des Transistors}
+		\begin{table}[ht]
+				\caption{Kennlininenmessung bei $I_{B}=19.9\mu A$.}
+				\begin{itemize}
+					\item N \dots Messnummer
+					\item $U_{CE}$ \dots  Kollektor-Emitterspannung,  $\Delta U_{CE}$ = $\pm$ (0,15\% + 2Digits)
+					\item $I_{C}$ \dots  Kollektorstrom, $\Delta I_{C}$ = $\pm$ (1.0\% + 2Digits)
+					\item $U_{BE}$ \dots  Basis-Emitterspannung,  $\Delta U_{BE}$ = $\pm$ (0,15\% + 2Digits)
+				\end{itemize}
+				\centering
+				\begin{tabular}{c|c|c|c}
+				 N & $U_{CE}/V$ & $I_{C}$/$\mu A$ & $U_{BE}/V$ \\\hline \hline
+				 1 & 0.002 & -0.8 & 0.541 \\\hline
+				 2 & 1.023 & 269.4 & 0.573 \\\hline
+				 3 & 2.008 & 536 & 0.589 \\\hline
+				 4 & 3.276 & 880 & 0.600 \\\hline
+				 5 & 4.070 & 1095 & 0.605 \\\hline
+				 6 & 5.105 & 1377 & 0.612 \\\hline
+				 7 & 6.124 & 1655 & 0.616 \\\hline
+				 8 & 7.07 & 1912 & 0.620 \\\hline
+				 9 & 8.07 & 2177 & 0.624 \\\hline
+				 10 & 9.08 & 2260 & 0.625 \\\hline
+				 11 & 10.02 & 2270 & 0.624
+				\end{tabular}
+			\label{tab:list_trans20}
+		\end{table}
+		
+		\begin{table}[ht]
+				\caption{Kennlininenmessung bei $I_{B}=50.1\mu A$.}
+				\begin{itemize}
+					\item N \dots Messnummer
+					\item $U_{CE}$ \dots  Kollektor-Emitterspannung,  $\Delta U_{CE}$ = $\pm$ (0,15\% + 2Digits)
+					\item $I_{C}$ \dots  Kollektorstrom, $\Delta I_{C}$ = $\pm$ (1.0\% + 2Digits)
+					\item $U_{BE}$ \dots  Basis-Emitterspannung,  $\Delta U_{BE}$ = $\pm$ (0,15\% + 2Digits)
+				\end{itemize}
+				\centering
+				\begin{tabular}{c|c|c|c}
+				 N & $U_{CE}/V$ & $I_{C}$/$\mu A$ & $U_{BE}/V$ \\\hline \hline
+				 1 & 0.003 & -0.5 & 0.566 \\
+				 2 & 1.112 & 296.0 & 0.584 \\
+				 3 & 2.152 & 575.9 & 0.593 \\
+				 4 & 3.215 & 866 & 0.601 \\
+				 5 & 4.027 & 1086 & 0.606 \\
+				 6 & 5.037 & 1362 & 0.610 \\
+				 7 & 5.997 & 1624 & 0.614 \\
+				 8 & 7.09 & 1924 & 0.618 \\
+				 9 & 8.14 & 2213 & 0.621 \\
+				 10 & 9.00 & 2452 & 0.623 \\
+				 11 & 10.11 & 2761 & 0.626
+				\end{tabular}
+				\label{tab:list_trans50}
+		\end{table}
+
+		\begin{table}[ht]
+				\caption{Kennlininenmessung bei $I_{B}=100.5\mu A$.}
+				\begin{itemize}
+					\item N \dots Messnummer
+					\item $U_{CE}$ \dots  Kollektor-Emitterspannung,  $\Delta U_{CE}$ = $\pm$ (0,15\% + 2Digits)
+					\item $I_{C}$ \dots  Kollektorstrom, $\Delta I_{C}$ = $\pm$ (1.0\% + 2Digits)			
+					\item $U_{BE}$ \dots  Basis-Emitterspannung,  $\Delta U_{BE}$ = $\pm$ (0,15\% + 2Digits)
+				\end{itemize}				
+				\centering
+				\begin{tabular}{c|c|c|c}
+				 N & $U_{CE}/V$ & $I_{C}$/$\mu A$ & $U_{BE}/V$ \\\hline \hline
+				 1 & 0.002 & -0.6 & 0.588 \\
+				 2 & 1.053 & 284.4 & 0.597 \\
+				 3 & 2.001 & 542.3 & 0.603 \\
+				 4 & 3.025 & 822 & 0.609 \\
+				 5 & 4.067 & 1108 & 0.613 \\
+				 6 & 5.121 & 1396 & 0.617 \\
+				 7 & 6.081 & 1660 & 0.620 \\
+				 8 & 7.13 & 1949 & 0.623 \\
+				 9 & 8.06 & 2209 & 0.625 \\
+				 10 & 9.10 & 2500 & 0.628 \\
+				 11 & 10.06 & 2766 & 0.630
+				\end{tabular}
+				\label{tab:list_trans100}
+		\end{table}
+\clearpage
+
+	\subsection{Verstärkerschaltung}
+		\subsubsection{Arbeitspunkt bei $I_C=5mA$}
+		Es war uns nicht möglich den Arbeitspunkt auf 5mA einzustellen. Stattdessen haben wir einen Wert genommen der knapp unter dem maximal einstellbaren lag.
+		\begin{flushleft}
+		Dieser war bei $I_C=2.4mA$.
+		\end{flushleft}
+		Zusätzlich war es nicht möglich den Funktionsgenerator auf eine Spitzen-Spitzenspannung von 10mV einzustellen, daher haben wir mit 20mV begonnen.
+		\begin{table}[ht]
+				\caption{Eingangs zu Ausgangsspannung bei $I_C=2.4mA$.}
+				\begin{itemize}
+					\item N \dots Messnummer
+					\item $U_{E}$ \dots  Eingangsspannung gemessen mit Oszilloskop,  $\Delta U_{E}$ = 4mV				
+					\item $U_{A}$ \dots  Ausgangsspanung gemessen mit Oszilloskop,  $\Delta U_{A}$ = 0.4V
+				\end{itemize}				
+				\centering
+				\begin{tabular}{c|c|c}
+				 N & $U_{E}/mV$ & $U_{A}/V$ \\\hline \hline
+				 1 & 20 & 3.2 \\
+				 2 & 30 & 6.8 \\
+				 3 & 40 & 9.0 \\
+				 4 & 50 & 9.6
+				\end{tabular}
+				\label{tab:list_ic24}
+		\end{table}
+		\begin{flushleft}
+		Eingangs- Ausgangsspannungverlauf sieht man auf Abbildung 4, Seite 8.
+		\end{flushleft}
+		
+		\subsubsection{Arbeitspunkt bei $I_C=1mA$}
+			\begin{table}[ht]
+				\caption{Eingangs zu Ausgangsspannung bei $I_C=1mA$.}
+				\begin{itemize}
+					\item N \dots Messnummer
+					\item $U_{E}$ \dots  Eingangsspannung gemessen mit Oszilloskop,  $\Delta U_{E}$ = 4mV				
+					\item $U_{A}$ \dots  Ausgangsspanung gemessen mit Oszilloskop,  $\Delta U_{A}$ = 0.4V
+				\end{itemize}				
+				\centering
+				\begin{tabular}{c|c|c}
+				 N & $U_{E}/mV$ & $U_{A}/V$ \\\hline \hline
+				 1 & 20 & 3.4 \\
+				 2 & 30 & 5.0 \\
+				 3 & 40 & 7.2 \\
+				 4 & 50 & 9.6
+				\end{tabular}
+				\label{tab:list_ic1}
+			\end{table}
+		\begin{flushleft}
+		Eingangs- Ausgangsspannungverlauf sieht man auf Abbildung 5, Seite 9.
+		\end{flushleft}
+
+\clearpage
+
+\section{Rechnung/Auswertung}
+	\subsection{Vierquadrantenkennlinienfeld}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics{kf_transistor.eps}
+			\caption{Vierquadrantenkennlinienfeld des Transistors BD139 bei wahrscheinlich zu geringem $I_B$ und zu geringen $U_{CE}$.}
+			\label{fig:kalibrierungskurve}
+		\end{figure}
+		
+	\subsection{Spannungsverstärkungsfaktor}
+		\subsubsection{Verstärkungsfaktor bei $I_C=2.4mA$}
+			\begin{table}[ht]
+				\caption{Spannungsverstärkungsfaktor bei $I_C=2.4mA$}
+				\begin{itemize}
+					\item N \dots Messnummer
+					\item $\frac{U_{A}}{U_{E}}$ \dots  Ausgangs- zu Eingangsspannung von Tabelle 5				
+				\end{itemize}				
+				\centering
+				\begin{tabular}{c|c}
+				 N & $\frac{U_{A}}{U_{E}}$ \\\hline \hline
+				 1 & 160.0 \\
+				 2 & 226.7 \\
+				 3 & 225 \\
+				 4 & 192 
+				\end{tabular}
+				\label{tab:list_uae24}
+			\end{table}
+
+\clearpage
+
+		\subsubsection{Verstärkungsfaktor bei $I_C=1mA$}
+			\begin{table}[ht]
+				\caption{Spannungsverstärkungsfaktor bei $I_C=1mA$}
+				\begin{itemize}
+					\item N \dots Messnummer
+					\item $\frac{U_{A}}{U_{E}}$ \dots  Ausgangs- zu Eingangsspannung von Tabelle 6				
+				\end{itemize}				
+				\centering
+				\begin{tabular}{c|c}
+				 N & $\frac{U_{A}}{U_{E}}$ \\\hline \hline
+				 1 & 170.0 \\
+				 2 & 166.7 \\
+				 3 & 180 \\
+				 4 & 192 
+				\end{tabular}
+				\label{tab:list_uae1}
+			\end{table}
+
+
+\section{Zusammenfassung}
+	\subsection{Vierquadrantenkennlinienfeld}
+	Das Vierquadrantenkennlinienfeld in Abbildung 3 auf Seite 6 sieht nicht wie ein typisches Kennlinienfeld eines npn-Transistors aus.
+	Unsere Vermutung ist, nachdem wir im Datenblatt nachgesehen haben, dass dieser Transistor für weit höhere Basisströme und höhere Kollektor- Emitterspannungen konzipiert ist.
+	
+	\subsection{Verstärkerschaltung}
+		\subsubsection{Verstärkungsfaktor}
+			\begin{itemize}
+				\item Verstärkungsfaktoren bei $I_C=2.4mA$ zeigt Tabelle 7 auf Seite 6.
+				\item Verstärkungsfaktoren bei $I_C=1mA$ zeigt Tabelle 8 auf Seite 7.
+			\end{itemize}
+
+		\subsubsection{Eingangs- Ausgangsspannungsverlauf}
+			\begin{itemize}
+				\item Eingangs- Ausgangsspannungsverlauf bei $I_C=2.4mA$ zeigt Abbildung 4 auf Seite 8.
+				\item Eingangs- Ausgangsspannungsverlauf bei $I_C=1mA$ zeigt Abbildung 5 auf Seite 9.				
+			\end{itemize}
+			Hier sieht man deutlich, dass der Arbeitspunkt bei 1mA zu niedrig ist um den Transistor richtig anzusteuern.
+\end{document}
