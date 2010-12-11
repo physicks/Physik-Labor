@@ -1,0 +1,561 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Phase-Leistung", "Title",
+ CellChangeTimes->{{3.496037040453931*^9, 3.496037061554023*^9}, {
+  3.4972838647766223`*^9, 3.497283871063982*^9}, {3.500315277229293*^9, 
+  3.500315278148344*^9}, {3.5003231724238605`*^9, 3.500323175448163*^9}, {
+  3.500915606304468*^9, 3.500915610999737*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Funktionen", "Section",
+ InitializationCell->True,
+ InitializationGroup->True,
+ CellChangeTimes->{{3.4960582690108356`*^9, 3.496058270433982*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Includes", "Subsection",
+ CellChangeTimes->{{3.4966702590064645`*^9, 3.4966702610065784`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "\"\<Labor.m\>\""}]], "Input",
+ CellChangeTimes->{{3.500915839267793*^9, 3.5009158472672505`*^9}, {
+  3.500915952253256*^9, 3.5009159534613247`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ger\[ADoubleDot]teliste", "Section",
+ CellChangeTimes->{{3.500921976595828*^9, 3.500921981467107*^9}}],
+
+Cell["\<\
+Oszi:
+true rms:
+normal:\
+\>", "Text",
+ CellChangeTimes->{3.500921986523396*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+1.) Spitzen und Effektivwerte f\[UDoubleDot]r verschiedene Kurvenformen\
+\>", "Section",
+ CellChangeTimes->{{3.5009163228884544`*^9, 3.5009163429746037`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f1", "=", " ", "50"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"df1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"U1", " ", "=", " ", "10"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"du1", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sin", "=", GridBox[{
+     {"\"\<Oszi\>\"", "\"\<true rms\>\"", "\"\<normal\>\""},
+     {"\[Placeholder]", "\[Placeholder]", "\[Placeholder]"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dos", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"drei", "=", GridBox[{
+     {"\"\<Oszi\>\"", "\"\<true rms\>\"", "\"\<normal\>\""},
+     {"\[Placeholder]", "\[Placeholder]", "\[Placeholder]"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"do3", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"recht", "=", GridBox[{
+     {"\"\<Oszi\>\"", "\"\<true rms\>\"", "\"\<normal\>\""},
+     {"\[Placeholder]", "\[Placeholder]", "\[Placeholder]"}
+    },
+    GridBoxDividers->{
+     "Columns" -> {{True}}, "ColumnsIndexed" -> {}, "Rows" -> {{True}}, 
+      "RowsIndexed" -> {}}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dor", "=", "0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.5009163650228643`*^9, 3.500916456065072*^9}, {
+  3.5009165087510853`*^9, 3.500916527869179*^9}, {3.500921887914756*^9, 
+  3.5009219562696657`*^9}, {3.500922023426507*^9, 3.500922031768984*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.) Phasenlage am Kondensator", "Section",
+ CellChangeTimes->{{3.5009164767032523`*^9, 3.5009164834386377`*^9}}],
+
+Cell[TextData[{
+ "Serienschaltung aus R und C. Stelltrafo als Spannungsquelle ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["U", "eff"], "=", 
+       RowBox[{"10", "V"}]}], ",", 
+      RowBox[{"50", "Hz"}]}], ")"}], "."}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\nSpannung an C messen und Strom durch U an R, am Oszi. Damit \
+Phasenverschiebung bestimmen."
+}], "Text",
+ CellChangeTimes->{{3.500916602248433*^9, 3.500916644527851*^9}, {
+  3.500916678364787*^9, 3.5009167064263916`*^9}, {3.500916763711668*^9, 
+  3.500916782573747*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f2", "=", " ", "50"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"df2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"U2", " ", "=", " ", "10"}], ";", " ", 
+  RowBox[{"(*", "Effektivwert", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"t2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dt2", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"\[Phi]2", "=", 
+    RowBox[{"t2", "*", "f2", "*", "2", "*", "\[Pi]"}]}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[Phi]2", "=", 
+  RowBox[{
+   RowBox[{"Basic`Fmult", "[", 
+    RowBox[{"t2", ",", "dt2", ",", "f2", ",", "df2"}], "]"}], "*", "2", "*", 
+   "\[Pi]"}]}]}], "Input",
+ CellChangeTimes->{{3.5009165554277554`*^9, 3.5009165789471006`*^9}, {
+   3.500916784814875*^9, 3.5009168198528795`*^9}, 3.5009174761844196`*^9, {
+   3.5009185126387014`*^9, 3.5009185491247883`*^9}, {3.500918583794771*^9, 
+   3.500918584162792*^9}, {3.5009186232730293`*^9, 3.500918631280487*^9}, {
+   3.5009186620632477`*^9, 3.5009187138592105`*^9}, {3.5009220418015575`*^9, 
+   3.5009220771265783`*^9}, {3.500922332841204*^9, 3.5009223859412413`*^9}, {
+   3.5009224375391927`*^9, 3.500922536661862*^9}, {3.500922660262932*^9, 
+   3.5009226636781273`*^9}, {3.5009236561908956`*^9, 3.500923664934396*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{"0", ",", "0"}], "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.500918632529558*^9, {3.500918686453643*^9, 3.5009187153632965`*^9}, 
+   3.5009216798728566`*^9, 3.500922079471712*^9, 3.500922469698032*^9, {
+   3.500922521712007*^9, 3.5009225374879093`*^9}, 3.5009225761321197`*^9, {
+   3.500922658007803*^9, 3.5009226643431654`*^9}, 3.5009236665284867`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.) Wirkleistung in einer RC-Schaltung", "Section",
+ CellChangeTimes->{{3.5009168265172606`*^9, 3.5009168422751617`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["3.1) 2 Parallele Widerst\[ADoubleDot]nde", "Subsection",
+ CellChangeTimes->{{3.5009169971550207`*^9, 3.5009170087456837`*^9}, {
+  3.5009170631587954`*^9, 3.5009170643108616`*^9}}],
+
+Cell["\<\
+Gleicher Aufbau wie in 2. aber Widerstand durch 2 parallele ersetzen. \
+(Wieviel \[CapitalOmega]?)\
+\>", "Text",
+ CellChangeTimes->{{3.500916864673443*^9, 3.500916914607299*^9}, {
+  3.500922687419485*^9, 3.5009226925397778`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f31", "=", " ", "f2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"df31", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"U31", " ", "=", " ", "U2"}], ";", " ", 
+  RowBox[{"(*", "Effektivwert", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"du31", "=", "0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.5009169735806723`*^9, 3.500916975132761*^9}, {
+  3.5009170674230394`*^9, 3.5009170929494996`*^9}, {3.500923052072342*^9, 
+  3.5009230550875144`*^9}, {3.5009238025102644`*^9, 3.500923805429432*^9}}],
+
+Cell["\<\
+Spannung an R und C mit \"true rms\" messen.
+Strom messen (ws wieder mit \"true rms\") und Kapazit\[ADoubleDot]t berechnen.\
+\>", "Text",
+ CellChangeTimes->{{3.5009171240352774`*^9, 3.5009171356579423`*^9}, {
+   3.5009171698568983`*^9, 3.5009171800644827`*^9}, {3.500921435930904*^9, 
+   3.500921436122915*^9}, {3.500921467648718*^9, 3.5009214844546795`*^9}, 
+   3.500921551835533*^9, {3.5009233961720233`*^9, 3.5009234053155465`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ur31", " ", "=", " ", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Uc31", " ", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"duc31", "=", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"I31", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"di31", "=", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Ca31", "=", 
+  FractionBox[
+   RowBox[{"Elec`Fc", "[", 
+    RowBox[{
+    "I31", ",", "du31", ",", "Uc31", ",", "duc31", ",", "f31", ",", "df31"}], 
+    "]"}], 
+   RowBox[{"2", "*", "\[Pi]"}]]}]}], "Input",
+ CellChangeTimes->{{3.500917137796065*^9, 3.500917209279153*^9}, {
+   3.5009175016068735`*^9, 3.5009175037029934`*^9}, {3.500917572218912*^9, 
+   3.5009175796903396`*^9}, {3.5009214221721168`*^9, 3.500921431003622*^9}, {
+   3.5009214884649086`*^9, 3.50092151681353*^9}, {3.5009215569888277`*^9, 
+   3.5009215580448885`*^9}, {3.5009227593215976`*^9, 
+   3.5009227913194275`*^9}, {3.500922865018643*^9, 3.5009228747632003`*^9}, 
+   3.5009229968361826`*^9, {3.500923059999795*^9, 3.5009231100936604`*^9}, {
+   3.500923379768085*^9, 3.500923422083505*^9}, {3.500923468409155*^9, 
+   3.500923498007848*^9}, {3.5009236096812353`*^9, 3.50092363161549*^9}, {
+   3.500923679206212*^9, 3.500923689101778*^9}, {3.5009237212356157`*^9, 
+   3.500923731171184*^9}, {3.5009240937829247`*^9, 3.500924131772097*^9}}],
+
+Cell[" Scheinleistung:", "Text",
+ CellChangeTimes->{{3.500917255237782*^9, 3.5009172996413217`*^9}, 
+   3.500921434337813*^9, {3.5009214698958464`*^9, 3.500921477231266*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PS31", "=", 
+   RowBox[{"Basic`Fmult", "[", 
+    RowBox[{"U31", ",", "du31", ",", "I31", ",", "di31"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.50091732146557*^9, 3.500917350743244*^9}, 
+   3.5009175061181316`*^9, {3.500917604489758*^9, 3.5009176080649624`*^9}, {
+   3.500919859955763*^9, 3.500919864041997*^9}, {3.5009200997814803`*^9, 
+   3.500920101309568*^9}, 3.5009214281154566`*^9, 3.500921471856959*^9, {
+   3.500924365943491*^9, 3.5009243746619897`*^9}}],
+
+Cell["\<\
+Mit Leistungsmessger\[ADoubleDot]t Wirkleistung messen.\
+\>", "Text",
+ CellChangeTimes->{{3.5009173808299656`*^9, 3.5009174271466146`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pw31", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dpw31", "=", "0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.500917429971776*^9, 3.5009174335069785`*^9}, {
+  3.5009174883201137`*^9, 3.500917488488123*^9}, {3.5009201088049965`*^9, 
+  3.500920110157074*^9}, {3.500922110157468*^9, 3.5009221191479816`*^9}}],
+
+Cell["Phase bestimmen. (ich nehm an mit Oszi)", "Text",
+ CellChangeTimes->{{3.500917453594127*^9, 3.50091746815196*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t31", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dt31", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Phi]31", "=", 
+  RowBox[{
+   RowBox[{"Basic`Fmult", "[", 
+    RowBox[{"t31", ",", "dt31", ",", "f31", ",", "df31"}], "]"}], "*", "2", 
+   "*", "\[Pi]"}]}]}], "Input",
+ CellChangeTimes->{{3.500917480729679*^9, 3.5009175122624826`*^9}, {
+  3.500918723786778*^9, 3.500918754472533*^9}, {3.5009221245802927`*^9, 
+  3.500922130611637*^9}, {3.5009237595288057`*^9, 3.500923768632327*^9}, {
+  3.500923798791052*^9, 3.5009238271096716`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{"0", ",", "0"}], "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.5009187584167585`*^9, 3.5009216799088583`*^9, 3.5009221331317816`*^9, {
+   3.5009238121598167`*^9, 3.5009238280527253`*^9}}]
+}, Open  ]],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["Z", "Ges"], "in", " ", "Gau\[SZ]scher", " ", "Zahlenebene", 
+   " ", 
+   RowBox[{"darstellen", "."}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{3.5009177486410027`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ZG31", "=", 
+   RowBox[{"Basic`Fdiv", "[", 
+    RowBox[{"U31", ",", "du31", ",", "I31", ",", "di31"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]31", ",", "ZG31"}], "}"}]}], "}"}], ",", 
+   RowBox[{"Joined", "\[Rule]", " ", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.500918836676235*^9, 3.5009188702341547`*^9}, {
+  3.50092110472696*^9, 3.500921114885541*^9}, {3.500921412845584*^9, 
+  3.500921415724748*^9}, {3.500923383293287*^9, 3.5009233851503925`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{GraphicsComplexBox[{{0., 0.}}, 
+     StyleBox[{},
+      System`Private`VertexInterpolants -> {{{0., 
+       0.}}}]], {{{}, {}}, {{}, {}, {}, {}}, {}}},
+   Axes->True,
+   AxesOrigin->{0, 0},
+   CoordinatesToolOptions:>{"DisplayFunction" -> ({
+       Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+       Mod[
+        ArcTan[
+         Part[#, 1], 
+         Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+       Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+       Mod[
+        ArcTan[
+         Part[#, 1], 
+         Part[#, 2]], 2 Pi]}& )},
+   DisplayFunction:>Identity,
+   PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+   PlotRangeClipping->True,
+   PlotRangePadding->Scaled[0.02]], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.500918831810957*^9, 3.5009188708841915`*^9}, 
+   3.5009211153445673`*^9, 3.50092167993186*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.2) 3 Parallele Widerst\[ADoubleDot]nde", "Subsection",
+ CellChangeTimes->{{3.500917029040844*^9, 3.5009170316329927`*^9}, {
+  3.5009210104415674`*^9, 3.500921012377678*^9}}],
+
+Cell["\<\
+Gleicher Aufbau wie in 2. aber Widerstand durch 3 parallele ersetzen. \
+(Wieviel \[CapitalOmega]?)\
+\>", "Text",
+ CellChangeTimes->{{3.500917047727913*^9, 3.5009170505350733`*^9}, {
+  3.5009227352012177`*^9, 3.5009227371933317`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f32", "=", " ", "f31"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"df32", "=", "df31"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"U32", " ", "=", " ", "U31"}], ";"}], " ", 
+  RowBox[{"(*", "Effektivwert", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"du32", "=", "du32"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.5009169735806723`*^9, 3.500916975132761*^9}, {
+  3.5009170674230394`*^9, 3.5009170929494996`*^9}, {3.500923052072342*^9, 
+  3.5009230550875144`*^9}, {3.5009238025102644`*^9, 3.500923805429432*^9}, {
+  3.500924270732045*^9, 3.5009242907391896`*^9}}],
+
+Cell["\<\
+Spannung an R und C mit \"true rms\" messen.
+Strom messen (ws wieder mit \"true rms\") und Kapazit\[ADoubleDot]t berechnen.\
+\>", "Text",
+ CellChangeTimes->{{3.5009171240352774`*^9, 3.5009171356579423`*^9}, {
+   3.5009171698568983`*^9, 3.5009171800644827`*^9}, {3.500921435930904*^9, 
+   3.500921436122915*^9}, {3.500921467648718*^9, 3.5009214844546795`*^9}, 
+   3.500921551835533*^9, {3.5009233961720233`*^9, 3.5009234053155465`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ur32", "=", " ", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Uc32", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"duc32", "=", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"I32", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"di32", "=", "0"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Ca32", "=", 
+  FractionBox[
+   RowBox[{"Elec`Fc", "[", 
+    RowBox[{
+    "I32", ",", "du32", ",", "Uc32", ",", "duc32", ",", "f32", ",", "df32"}], 
+    "]"}], 
+   RowBox[{"2", "*", "\[Pi]"}]]}]}], "Input",
+ CellChangeTimes->{{3.500917137796065*^9, 3.500917209279153*^9}, {
+   3.5009175016068735`*^9, 3.5009175037029934`*^9}, {3.500917572218912*^9, 
+   3.5009175796903396`*^9}, {3.5009214221721168`*^9, 3.500921431003622*^9}, {
+   3.5009214884649086`*^9, 3.50092151681353*^9}, {3.5009215569888277`*^9, 
+   3.5009215580448885`*^9}, {3.5009227593215976`*^9, 
+   3.5009227913194275`*^9}, {3.500922865018643*^9, 3.5009228747632003`*^9}, 
+   3.5009229968361826`*^9, {3.500923059999795*^9, 3.5009231100936604`*^9}, {
+   3.500923379768085*^9, 3.500923422083505*^9}, {3.500923468409155*^9, 
+   3.500923498007848*^9}, {3.5009236096812353`*^9, 3.50092363161549*^9}, {
+   3.500923679206212*^9, 3.500923689101778*^9}, {3.5009237212356157`*^9, 
+   3.500923731171184*^9}, {3.5009240937829247`*^9, 3.500924131772097*^9}, {
+   3.5009242500298615`*^9, 3.5009242679168844`*^9}}],
+
+Cell[" Scheinleistung:", "Text",
+ CellChangeTimes->{{3.500917255237782*^9, 3.5009172996413217`*^9}, 
+   3.500921434337813*^9, {3.5009214698958464`*^9, 3.500921477231266*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PS32", "=", 
+   RowBox[{"Basic`Fmult", "[", 
+    RowBox[{"U32", ",", "du32", ",", "I32", ",", "di32"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.50091732146557*^9, 3.500917350743244*^9}, 
+   3.5009175061181316`*^9, {3.500917604489758*^9, 3.5009176080649624`*^9}, {
+   3.500919859955763*^9, 3.500919864041997*^9}, {3.5009200997814803`*^9, 
+   3.500920101309568*^9}, 3.5009214281154566`*^9, 3.500921471856959*^9, {
+   3.500924242853451*^9, 3.500924245605608*^9}, {3.5009243138735127`*^9, 
+   3.500924337687875*^9}}],
+
+Cell["\<\
+Mit Leistungsmessger\[ADoubleDot]t Wirkleistung messen.\
+\>", "Text",
+ CellChangeTimes->{{3.5009173808299656`*^9, 3.5009174271466146`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pw32", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dpw32", "=", "0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.500917429971776*^9, 3.5009174335069785`*^9}, {
+  3.5009174883201137`*^9, 3.500917488488123*^9}, {3.5009201088049965`*^9, 
+  3.500920110157074*^9}, {3.500922110157468*^9, 3.5009221191479816`*^9}, {
+  3.5009242376861553`*^9, 3.500924240621323*^9}}],
+
+Cell["Phase bestimmen. (ich nehm an mit Oszi)", "Text",
+ CellChangeTimes->{{3.500917453594127*^9, 3.50091746815196*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t32", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dt32", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Phi]32", "=", 
+  RowBox[{
+   RowBox[{"Basic`Fmult", "[", 
+    RowBox[{"t32", ",", "dt32", ",", "f32", ",", "df32"}], "]"}], "*", "2", 
+   "*", "\[Pi]"}]}]}], "Input",
+ CellChangeTimes->{{3.500917480729679*^9, 3.5009175122624826`*^9}, {
+  3.500918723786778*^9, 3.500918754472533*^9}, {3.5009221245802927`*^9, 
+  3.500922130611637*^9}, {3.5009237595288057`*^9, 3.500923768632327*^9}, {
+  3.500923798791052*^9, 3.5009238271096716`*^9}, {3.50092422518344*^9, 
+  3.5009242337419295`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"{", 
+   RowBox[{"0", ",", "0"}], "}"}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.5009187584167585`*^9, 3.5009216799088583`*^9, 3.5009221331317816`*^9, {
+   3.5009238121598167`*^9, 3.5009238280527253`*^9}, 3.5009243471044135`*^9}]
+}, Open  ]],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["Z", "Ges"], "in", " ", "Gau\[SZ]scher", " ", "Zahlenebene", 
+   " ", 
+   RowBox[{"darstellen", "."}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{3.5009177486410027`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ZG32", "=", 
+   RowBox[{"Basic`Fdiv", "[", 
+    RowBox[{"U32", ",", "du32", ",", "I32", ",", "di32"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPolarPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Phi]32", ",", "ZG32"}], "}"}]}], "}"}], ",", 
+   RowBox[{"Joined", "\[Rule]", " ", "True"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.500918836676235*^9, 3.5009188702341547`*^9}, {
+  3.50092110472696*^9, 3.500921114885541*^9}, {3.500921412845584*^9, 
+  3.500921415724748*^9}, {3.500923383293287*^9, 3.5009233851503925`*^9}, {
+  3.5009242084394827`*^9, 3.500924219271102*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  GraphicsBox[{GraphicsComplexBox[{{0., 0.}, {0., 0.}, {0., 0.}}, {{}, {}, 
+      {Hue[0.67, 0.6, 0.6], 
+       LineBox[{1, 2}]}}], {{{}, {}}, {{}, {}, {}, {}}, {}}},
+   Axes->True,
+   AxesOrigin->{0, 0},
+   CoordinatesToolOptions:>{"DisplayFunction" -> ({
+       Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+       Mod[
+        ArcTan[
+         Part[#, 1], 
+         Part[#, 2]], 2 Pi]}& ), "CopiedValueFunction" -> ({
+       Sqrt[Part[#, 1]^2 + Part[#, 2]^2], 
+       Mod[
+        ArcTan[
+         Part[#, 1], 
+         Part[#, 2]], 2 Pi]}& )},
+   DisplayFunction:>Identity,
+   PlotRange->{{Automatic, Automatic}, {Automatic, Automatic}},
+   PlotRangeClipping->True,
+   PlotRangePadding->Scaled[0.02]], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.500918831810957*^9, 3.5009188708841915`*^9}, 
+   3.5009211153445673`*^9, 3.50092167993186*^9, 3.5009243494145455`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowToolbars->"EditBar",
+WindowSize->{722, 957},
+WindowMargins->{{Automatic, 453}, {70, Automatic}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+ShowSelection->True,
+FrontEndVersion->"7.0 for Microsoft Windows (64-bit) (November 10, 2008)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+

@@ -42,20 +42,30 @@ Begin["Basic`"];
 
 Fadd[va_,dva_,vb_,dvb_]:=Module[{f,fe,a,b,da,db},
 f=a+b;
-fe=GError[f,{a,b},{da,db}];
+fe=Error`GError[f,{a,b},{da,db}];
 {f,fe}/.{a->va,b->vb,da->dva,db->dvb}]
 
 
 Fdiv[a1_,da1_,b1_,db1_]:= Module[{f,fe,a,b,da,db},
 f=a/b;
-fe = GError[f,{a,b},{da,db}];
+fe = Error`GError[f,{a,b},{da,db}];
 {f,fe}/.{a->a1,da->da1,b-> b1,db->db1}]
 
 
 Fmult[\[Gamma]_,d\[Gamma]_,\[Delta]_,d\[Delta]_]:= Module[{f,fe,a,b,da,db},
 f=a*b;
-fe = GError[f,{a,b},{da,db}];
+fe = Error`GError[f,{a,b},{da,db}];
 {f,fe}/.{a->\[Gamma],da->d\[Gamma],b-> \[Delta],db->d\[Delta]}]
+
+
+End[];
+Begin["Elec`"];
+
+
+Fc[\[Gamma]_,d\[Gamma]_,\[Delta]_,d\[Delta]_,\[Chi]_,d\[Chi]_]:= Module[{f,fe,a,b,c,da,db,dc},
+f=a/(b*c);
+fe = Error`GError[f,{a,b,c},{da,db,dc}];
+{f,fe}/.{a->\[Gamma],da->d\[Gamma],b-> \[Delta],db->d\[Delta],c->\[Chi],dc->d\[Chi]}]
 
 
 End[];
