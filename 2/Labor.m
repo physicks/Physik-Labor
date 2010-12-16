@@ -36,6 +36,19 @@ fe=Error`GError[f,{ad,c,x},{dad,dc,dx}];
 {f,fe}/.{ad->AD[[1]],dad->AD[[2]],c->C,dc->dC,x->X,dx->dX}]
 
 
+RefIndexTotal[N1_,dN1_,\[CapitalAlpha]_,d\[CapitalAlpha]_]:=Module[{f,fe,n1,\[Alpha],dn1,d\[Alpha]},
+f=(n1 Sin[90 Degree])/Sin[\[Alpha]];
+fe = Error`GError[f,{n1,\[Alpha]},{dn1,d\[Alpha]}];
+{f,fe}/.{n1->N1,dn1->dN1,\[Alpha]->\[CapitalAlpha],d\[Alpha]->d\[CapitalAlpha]}
+]
+
+
+Fresnel[N1_,N2_,\[CapitalAlpha]_,\[CapitalBeta]_,dN1_,dN2_,d\[CapitalAlpha]_,d\[CapitalBeta]_]:=Module[{f,fe,n1,n2,\[Alpha],\[Beta],dn1,dn2,d\[Alpha],d\[Beta]},
+f=(n1 Cos[\[Alpha]]-n2 Cos[\[Beta]])/(n1 Cos[\[Alpha]]+n2 Cos[\[Beta]]);
+fe=Error`GError[f,{n1,n2,\[Alpha],\[Beta]},{dn1,dn2,d\[Alpha],d\[Beta]}];
+{f,fe}/.{n1->N1,n2->N2,\[Alpha]->\[CapitalAlpha],\[Beta]->\[CapitalBeta],dn1->dN1,dn2->dN2,d\[Alpha]->d\[CapitalAlpha],d\[Beta]->d\[CapitalBeta]}]
+
+
 End[];
 Begin["Basic`"];
 
