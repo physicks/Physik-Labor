@@ -87,6 +87,12 @@ fe = Error`GError[f,{a,b},{da,db}];
 {f,fe}/.{a->a1,da->da1,b-> b1,db->db1}]
 
 
+F\[Omega][a1_,da1_,b1_,db1_]:= Module[{f,fe,a,b,da,db},
+f=1/Sqrt[a*b];
+fe = Error`GError[f,{a,b},{da,db}];
+{f,fe}/.{a->a1,da->da1,b-> b1,db->db1}]
+
+
 End[];
 
 
