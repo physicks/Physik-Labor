@@ -6,18 +6,81 @@
 \usepackage[]{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage{ngerman}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Armin Fürst \linebreak Michael Pusterhofer}
+\fancyhead[C]{Photospektrometer}
+\fancyhead[R]{G27}
+\fancyfoot[C]{\thepage/\pageref{LastPage} }
+
+
 \begin{document}
 
+\section{Aufgabenstellung}
+\begin{itemize}
+  \item Messen der Intensitäten 2 verschiedenen Filtern
+  \item Zeigen der Additivität der Absorbance
+\end{itemize}
+
+\section{Voraussetzungen}
+\subsection{Transmission}
+\begin{align}
+				t=\frac{I}{I_0} \quad  \Delta t = \left|\frac{1}{I_0}\right|\Delta I + \left| \frac{I}{I_0^2} \right| \Delta I_0 \\
+				\Delta I\dots \text{Fehler der Intensität mit Filter}\\
+				I\dots \text{Intensität mit Filter}\\
+				\Delta I_0\dots \text{Fehler der Intensität ohne Filter}\\
+				I_0\dots \text{Intensität ohne Filter}
+				\label{trans}
+\end{align}
+
+\subsection{Absorbance}
+\begin{align}
+				ad=Log\left( \frac{I_0}{I} \right) \quad
+        \Delta ad = \left| \frac{1}{I_0}\right| \Delta I_0 + \left| \frac{1}{I}\right|\Delta I\\
+				\Delta I\dots \text{Fehler der Intensität mit Filter}\\
+				I\dots \text{Intensität mit Filter}\\
+				\Delta I_0\dots \text{Fehler der Intensität ohne Filter}\\
+				I_0\dots \text{Intensität ohne Filter}
+				\label{adsorb}
+\end{align}
+
+
+\section{Versuchsaufbau}
+Das Licht der Halogenlampe wird durch die Filter und dann durch den Monochromator geleitet, auf dessen Ausgang die Photodiode sitzt. 
+
+\section{Geräteliste}
+\begin{itemize}
+  \item Magenter Filter
+  \item Gelber Filter
+  \item Voltmeter VC230
+  \item Halogen-Lampe
+  \item Photodiode
+  \item Monochromator
+\end{itemize}
+\newpage
+
 \section{Messung}
-\begin{table}
+
+Diodenspannung ohne Licht
+\begin{align}
+  U_{D0}=(29\pm3)mV
+  \label{diode}
+\end{align}
+
+\begin{table}[ht]
 				\centering
 				\caption{Intensitätswerte mit und ohne Filter}
 				\begin{itemize}
 								\item $\lambda$ \dots Wellenlänge in nm , U=$\pm$0.2nm
-								\item $U_0$ Intensität ohne Filter,U=$\pm$0.001V
-								\item $U_{mag}$ Intensität mit magentem Filter,U=$\pm$0.001V
-								\item $U_{gelb}$ Intensität mit gelbem Filter,U=$\pm$0.001V
-								\item $U_{m+p}$ Intensität mit gelbem und magentem Filter,U=$\pm$0.001V
+								\item $U_0$ \dots Intensität ohne Filter,U=$\pm$0.002V
+								\item $U_{mag}$ \dots Intensität mit magentem Filter,U=$\pm$0.002V
+								\item $U_{gelb}$ \dots Intensität mit gelbem Filter,U=$\pm$0.002V
+								\item $U_{m+p}$ \dots Intensität mit gelbem und magentem Filter,U=$\pm$0.002V
 				\end{itemize}
 				\begin{tabular}{|c|c|c|c|c|}
 								\hline
@@ -46,84 +109,110 @@
 				\end{tabular}
 				\label{tab:1}
 \end{table}
-
+\newpage
 \section{Auswertung}
 \subsection{Transmission}
-\begin{align}
-				t=\frac{I}{I_0} \quad  \Delta t = \left|\frac{1}{I_0}\right|\Delta I + \left| \frac{I}{I_0^2} \right| \Delta I_0 \\
-				\Delta I\dots \text{Größtfehler der Intensität mit Filter}\\
-				I\dots \text{Intensität mit Filter}\\
-				\Delta I_0\dots \text{Größtfehler der Intensität ohne Filter}\\
-				I_0\dots \text{Intensität ohne Filter}
-				\label{trans}
-\end{align}
-
-\begin{table}
+\begin{table}[ht]
 				\centering
-				\begin{tabular}{<+dimensions+>}
-
-\begin{array}{cc}
-0.567742 & 0.0202289 &    			0.103226 & 0.0142352 &    				0.0774194 & 0.0139022 \\
-0.557604 & 0.0143558 &    			0.0875576 & 0.0100236 &   				0.0599078 & 0.00976874 
-0.505051 & 0.010135 &     			0.0538721 & 0.00709678 &  				0.040404 & 0.00700609 &
-0.442159 & 0.0074147 &    			0.0437018 & 0.00536608 &  				0.033419 & 0.00531321 &
-0.362934 & 0.00526229 &   			0.0328185 & 0.00398772 &  				0.0250965 & 0.0039579 &
-0.282511 & 0.00383411 &   			0.0254111 & 0.0030655 &   				0.0179372 & 0.00304316 &
-0.199544 & 0.00273556 &   			0.0205245 & 0.00232731 &  				0.013683 & 0.00231171 &
-0.123162 & 0.00206464 &   			0.0174632 & 0.00187034 &  				0.0119485 & 0.0018602 &
-0.078643 & 0.00166329 &   			0.0462606 & 0.00161335 &  				0.0131072 & 0.00156223 &
-0.0454845 & 0.00137836 &  			0.187871 & 0.00156608 &   				0.0145023 & 0.00133751 &
-0.0242718 & 0.00110493 &  			0.366775 & 0.00147441 &   				0.012945 & 0.00109271 &
-0.0153441 & 0.000890262 & 			0.527839 & 0.00133962 &   				0.0105217 & 0.000886034 &
-0.0104478 & 0.000754065 & 			0.670896 & 0.00124694 &   				0.00858209 & 0.000752673 &
-0.00720131 & 0.000659379 &			0.744026 & 0.00114175 &   				0.00621931 & 0.000658736 &
-0.00557348 & 0.000589952 &			0.774127 & 0.00104085 &   				0.00528014 & 0.00058978 &
-0.00532623 & 0.00053546 & 			0.776565 & 0.000946239 &  				0.00479361 & 0.000535176 &
-0.00611098 & 0.000491866 &			0.813249 & 0.000886457 &  				0.00537766 & 0.000491507 &
-0.00562936 & 0.000452884 &			0.841027 & 0.000829105 &  				0.00517901 & 0.000452681 &
-0.00607839 & 0.000421747 &			0.79061 & 0.000750622 &   				0.00523999 & 0.000421396 &
-0.0115664 & 0.000396615 & 			0.835326 & 0.000719595 &  				0.00940992 & 0.000395769 &
-0.0514665 & 0.000387923    			0.819222 & 0.000671176     				0.0383693 & 0.000383091
-\end{array}
- 
- 
-\begin{array}{cc}
- 0.567742 & 0.0202289 \\    
- 0.557604 & 0.0143558 \\
- 0.505051 & 0.010135 \\
- 0.442159 & 0.0074147 \\
- 0.362934 & 0.00526229 \\
- 0.282511 & 0.00383411 \\
- 0.199544 & 0.00273556 \\
- 0.123162 & 0.00206464 \\
- 0.078643 & 0.00166329 \\
- 0.0454845 & 0.00137836 \\
- 0.0242718 & 0.00110493 \\
- 0.0153441 & 0.000890262 \\
- 0.0104478 & 0.000754065 \\
- 0.00720131 & 0.000659379 \\
- 0.00557348 & 0.000589952 \\
- 0.00532623 & 0.00053546 \\
- 0.00611098 & 0.000491866 \\
- 0.00562936 & 0.000452884 \\
- 0.00607839 & 0.000421747 \\
- 0.0115664 & 0.000396615 \\
- 0.0514665 & 0.000387923
-\end{array}
-
+				\caption{Gerechnete Transmission}
+        \begin{itemize}
+          \item $t_{mag}$ \dots Transmission mit magentem Filter
+          \item $\Delta t_{mag}$ \dots Größtfehler der Transmission mit magentem Filter
+          \item $t_{gelb}$ \dots Transmission mit gelbem Filter 
+          \item $\Delta t_{gelb}$ \dots Größtfehler der Transmission mit gelbem Filter
+          \item $t_{m+g}$ \dots Transmission mit beiden Filtern 
+          \item $\Delta t_{m+g}$ \dots Größtfehler der Transmission mit beiden Filtern
+        \end{itemize}
+				\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$t_{mag}$ & $\Delta t_{mag}$ & $t_{gelb}$ & $\Delta t_{gelb}$ & $t_{m+g}$ & $\Delta t_{m+g}$ \\
+\hline
+0.57 & 0.02 &    			0.10& 0.01&    				0.08& 0.01\\\hline
+0.56 & 0.01 &    			0.09& 0.01&   				0.06& 0.01\\\hline
+0.51 & 0.01 &   			0.054& 0.007&  				0.040& 0.010\\\hline
+0.442 & 0.007 & 			0.044& 0.005&  				0.033& 0.005\\\hline
+0.363 & 0.005 &  			0.033& 0.004&  				0.025& 0.004\\\hline
+0.283 & 0.003 &  			0.025& 0.003&   			0.018& 0.003\\\hline
+0.200 & 0.003 &  			0.021& 0.002&  				0.014& 0.002\\\hline
+0.123 & 0.002 &  			0.017& 0.002&  				0.012& 0.002\\\hline
+0.079 & 0.002 & 			0.046& 0.002&  				0.013& 0.002\\\hline
+0.045 & 0.001 &  			0.188& 0.002&   			0.015& 0.001\\\hline
+0.024 & 0.001 &  			0.367& 0.001&   			0.013& 0.001\\\hline
+0.0153 & 0.0009 &			0.528& 0.001&   			0.0105& 0.0009\\\hline
+0.0104 & 0.0008 &			0.671& 0.001&   			0.0086& 0.0008\\\hline
+0.0072 & 0.0007 &			0.744& 0.001&   			0.0062& 0.0007\\\hline
+0.0056 & 0.0006 &			0.774& 0.001&   			0.0053& 0.0006\\\hline
+0.0053 & 0.0005 &			0.7766& 0.0009&  			0.0048& 0.0005\\\hline
+0.0061 & 0.0005 &			0.8132& 0.0009&  			0.0054& 0.0005\\\hline
+0.0056 & 0.0005 &			0.8410& 0.0008&  			0.0052& 0.0005\\\hline
+0.0061 & 0.0004 &			0.7906& 0.0008&   		0.0052& 0.0004\\\hline
+0.0116 & 0.0004 &			0.8353& 0.0007&  			0.0094& 0.0004\\\hline
+0.0515 & 0.0004 &			0.8192& 0.0007&       0.0384& 0.0004\\\hline
 				\end{tabular}
-				\caption{<+Caption text+>}
-				\label{tab:<+label+>}
-\end{table}<++>
+				\label{tab:trans}
+\end{table}
+\newpage
+\subsection{Absorbance}
+\begin{table}[ht]
+  \centering
+  \caption{Gerechnete Absorbance}
+  \begin{itemize}
+    \item $ad_{mag}$ \dots Absorbance des magenten Filters
+    \item $\Delta ad_{mag}$ \dots Größtfehler der Absorbance des magenten Filters
+    \item $ad_{gelb}$\dots Absorbance des gelben Filters
+    \item $\Delta ad_{gelb}$\dots Größtfehler der Absorbance des gelben Filters
+    \item $ad_{m+g}$\dots Absorbance beider Filter
+    \item $\Delta ad_{m+g}$\dots Größtfehler der Absorbance beider Filter
+  \end{itemize}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $ad_{mag}$&$\Delta ad_{mag}$& $ad_{gelb}$&$\Delta ad_{gelb}$& $ad_{m+g}$&$\Delta ad_{m+g}$\\\hline
+ 0.566088 & 0.1&    6.81287 & 0.3&    2.55852 & 0.6\\\hline
+ 0.584107 & 0.08&   7.30676 & 0.2&    2.81495 & 0.5\\\hline
+ 0.683097 & 0.07&   8.76379 & 0.2&    3.20883 & 0.5\\\hline
+ 0.816085 & 0.06&   9.39147 & 0.2&    3.39863 & 0.5\\\hline
+ 1.01353 & 0.06&    10.2507 & 0.2&    3.68503 & 0.5\\\hline
+ 1.26404 & 0.05&    11.0181 & 0.2&    4.02088 & 0.5\\\hline
+ 1.61172 & 0.06&    11.6588 & 0.2&    4.2916 & 0.5\\\hline
+ 2.09426 & 0.07&    12.1434 & 0.2&    4.42715 & 0.5\\\hline
+ 2.54284 & 0.08&    9.22111 & 0.08&   4.3346 & 0.4\\\hline
+ 3.09038 & 0.1&     5.01851 & 0.04&   4.23345 & 0.3\\\hline
+ 3.71844 & 0.2&     3.0147 & 0.04&    4.34705 & 0.3\\\hline
+ 4.17702 & 0.2&     1.92676 & 0.04&   4.55432 & 0.3\\\hline
+ 4.56137 & 0.2&     1.21204 & 0.04&   4.75808 & 0.3\\\hline
+ 4.93349 & 0.3&     0.905453 & 0.05&  5.0801 & 0.3\\\hline
+ 5.18974 & 0.3&     0.789401 & 0.05&  5.2438 & 0.4\\\hline
+ 5.23511 & 0.3&     0.782186 & 0.05&  5.34047 & 0.4\\\hline
+ 5.09767 & 0.3&     0.647003 & 0.07&  5.2255 & 0.3\\\hline
+ 5.17976 & 0.3&     0.549507 & 0.08&  5.26314 & 0.3\\\hline
+ 5.10302 & 0.2&     0.73526 & 0.07&   5.25144 & 0.3\\\hline
+ 4.45965 & 0.1&     0.574118 & 0.08&  4.66599 & 0.2\\\hline
+ 2.96682 & 0.04&     0.633962 & 0.08& 3.2605 & 0.05\\  \hline
+  \end{tabular}
+  \label{tab:adsorb}
+\end{table}
 
-\subsection{Adsorbance}
-\begin{align}
-				ad=Log\left( \frac{I_0}{I} \right)\\
-				I\dots \text{Intensität mit Filter}\\
-				I_0\dots \text{Intensität ohne Filter}
-				\label{adsorb}
-\end{align}
+\newpage
+\subsection{Diagramme}
 
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{trans.eps}
+  \end{center}
+  \caption{Transmission des Magenten Filters(magenta), des gelben Filters(gelb), beider Filter(rot) und das Produkt des magenten und gelben Filters(schwarz) über die Wellenlänge($\lambda$)}
+  \label{fig:trans}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{adsorb.eps}
+  \end{center}
+  \caption{Absorbance des Magenten Filters(magenta), des gelben Filters(gelb), beider Filter(rot) und das Produkt des magenten und gelben Filters(schwarz) über die Wellenlänge($\lambda$) }
+  \label{fig:adsob}
+\end{figure}
+
+\section{Zusammenfassung}
+Bei größeren Wellenlängen sieht man gut, dass die Additivität der Absorbance gegeben ist. Die Spitze in der Kurve der Absorbance des gelben Filters ist wahrscheinlich auf die geringe Intensität zurückzuführen.
 \end{document}
-
 

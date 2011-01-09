@@ -1,0 +1,129 @@
+%     Created: Don Nov 25 12:00  2010 C
+% Last Change: Don Nov 25 12:00  2010 C
+%
+\documentclass[a4paper]{article}
+\usepackage[]{amsmath}
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+\usepackage[]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{Michael Pusterhofer}
+\fancyhead[C]{Fresnel}
+\fancyhead[R]{G27}
+\fancyfoot[C]{\thepage/\pageref{LastPage} }
+
+\begin{document}
+\section{Aufgabenstellung}
+\begin{itemize}
+  \item Messen der reflektierten Instensität bei p und s Polarisiertem Licht 
+  \item Vergleichen der Messungen mit den theoretischen Werten
+\end{itemize}
+
+\section{Voraussetzungen}
+  Fresnelsche Formel
+  Größtfehler
+
+\section{Versuchsaufbau}
+  Der Versuch besteht aus einem Laser mit Polarisationsfilter, einem Prisma mit einem Halbkreis als Grundfläche, einer Drehbaren Scheibe auf der das Prisma montiert wird und einer Photodiode mit Laserlinienfilter um die Intensität zu messen.
+
+
+
+\section{Geräteliste}
+\begin{itemize}
+  \item Laser 
+  \item Polarisationsfilter 
+  \item Prisma(Halbzylinder) 
+  \item Halterung
+  \item Photodiode mit Laserlinienfilter
+  \item Voltmeter
+\end{itemize}
+
+\section{Messung}
+
+Messen der Reflektierten Intensitäten abhängig vom Winkel und Mediumsübergang
+
+\begin{table}
+  \centering
+  \caption{Messung der Reflektierten Intensitäten}
+\begin{itemize}
+  \item $\alpha$ \dots Winkel der reflektierten Lichtes
+  \item $I_{{lg}_p}$ \dots Intensität bei p Polarisierten Licht und einem Luft-Glas Übergang
+  \item $I_{{lg}_s}$ \dots Intensität bei s Polarisierten Licht und einem Luft-Glas Übergang
+  \item $I_{{gl}_p}$ \dots Intensität bei p Polarisierten Licht und einem Glas-Luft Übergang
+  \item $I_{{gl}_s}$ \dots Intensität bei s Polarisierten Licht und einem Glas-Luft Übergang
+\end{itemize}
+  \begin{tabular}{|c|c|c|c|c|}
+   
+ \text{$\alpha $/${}^{\circ}$} & \text{I l-g p/V} & \text{I l-g s/V} & \text{I g-l p/V} & \text{I g-l s/V} \\
+ 15 & 0.079 & 0.099 & 0.051 & 0.090 \\
+ 20 & 0.074 & 0.108 & 0.039 & 0.108 \\
+ 25 & 0.067 & 0.119 & 0.024 & 0.144 \\
+ 26 & -  & -  & 0.021 & -  \\
+ 27 & -  & -  & 0.018 & -  \\
+ 28 & -  & -  & 0.014 & -  \\
+ 29 & -  & -  & 0.010 & -  \\
+ 30 & 0.056 & 0.135 & 0.006 & 0.194 \\
+ 31 & -  & -  & 0.005 & -  \\
+ 32 & -  & -  & 0.003 & -  \\
+ 33 & -  & -  & 0.003 & -  \\
+ 34 & -  & -  & 0.004 & -  \\
+ 35 & 0.045 & 0.155 & 0.010 & 0.354 \\
+ 36 & -  & -  & 0.017 & 0.404 \\
+ 37 & -  & -  & 0.038 & 0.480 \\
+ 38 & -  & -  & 0.082 & 0.598 \\
+ 39 & -  & -  & 0.148 & 0.717 \\
+ 40 & 0.033 & 0.180 & 0.381 & 1.085 \\
+ 41 & -  & -  & 1.200 & 1.708 \\
+ 42 & -  & -  & 1.903 & 1.966 \\
+ 43 & -  & -  & 1.910 & 1.973 \\
+ 44 & -  & -  & 1.930 & 1.975 \\
+ 45 & 0.020 & 0.218 & 1.885 & 1.940 \\
+ 50 & 0.008 & 0.268 & 1.841 & 1.888 \\
+ 51 & 0.007 & -  & -  & -  \\
+ 52 & 0.005 & -  & -  & -  \\
+ 53 & 0.004 & -  & -  & -  \\
+ 54 & 0.003 & -  & -  & -  \\
+ 55 & 0.002 & 0.338 & 1.853 & 1.880 \\
+ 56 & 0.002 & -  & -  & -  \\
+ 57 & 0.003 & -  & -  & -  \\
+ 58 & 0.003 & -  & -  & -  \\
+ 59 & 0.005 & -  & -  & -  \\
+ 60 & 0.008 & 0.430 & 1.815 & 1.896 \\
+ 65 & 0.036 & 0.556 & 1.914 & 1.970 \\
+ 66 & 0.049 & -  & -  & -  \\
+ 67 & 0.061 & -  & -  & -  \\
+ 68 & 0.075 & -  & -  & -  \\
+ 69 & 0.093 & -  & -  & -  \\
+ 70 & 0.111 & 0.734 & 1.923 & 1.982 \\
+ 71 & 0.136 & -  & -  & -  \\
+ 72 & 0.162 & -  & -  & -  \\
+ 73 & 0.201 & -  & -  & -  \\
+ 74 & 0.241 & -  & -  & -  \\
+ 75 & 0.275 & 0.989 & 1.970 & 2.076 \\
+ 76 & 0.333 & -  & -  & -  \\
+ 77 & 0.394 & -  & -  & -  \\
+ 78 & 0.456 & -  & -  & -  \\
+ 79 & 0.525 & -  & -  & -  \\
+ 80 & 0.605 & 1.315 & 1.797 & 2.063 \\
+ 81 & 0.705 & -  & -  & -  \\
+ 82 & 0.800 & -  & -  & -  \\
+ 83 & 0.905 & -  & -  & -  \\
+ 84 & 1.054 & -  & -  & -  \\
+ 85 & 1.173 & 1.692 & 1.953 & 2.024
+ 
+  \end{tabular}
+  \label{tab:ref_int}
+\end{table}
+
+\section{Rechnung/Auswertung}
+\section{Zusammenfassung}
+\end{document}
+
+
+
+
