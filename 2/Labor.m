@@ -99,6 +99,12 @@ fe = Error`GError[f,{a,b,c},{da,db,dc}];
 {f,fe}/.{a-> a1,da-> da1,b-> b1,db-> db1,c-> c1,dc-> dc1}]
 
 
+F\[CapitalLambda][a1_,da1_,b1_,db1_,c1_,dc1_]:= Module[{f,fe,a,b,c,da,db,dc},
+f=1/a Log[b/c];
+fe = Error`GError[f,{a,b,c},{da,db,dc}];
+{f,fe}/.{a-> a1,da-> da1,b-> b1,db-> db1,c-> c1,dc-> dc1}]
+
+
 End[];
 
 
